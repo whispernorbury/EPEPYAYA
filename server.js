@@ -153,8 +153,11 @@ async function callLLMFallback(prompt) {
       try {
         const cached = await redis.get(qKey);
         if (cached) {
-          const payload = JSON.parse(cached);
-          ws.send(JSON.stringify({ type: "result", source: "cache", data: payload }));
+          const cachedResult = JSON.parse(cached);
+          // 캐시에 source 정보가 포함되어 있으면 사용, 없으면 fallback 속성으로 판단 (하위 호환성)
+          const source = cachedResult.source || (cachedResult.fallback ? "llm" : "search");
+          const data = cachedResult.data || cachedResult; // data 속성이 있으면 사용, 없으면 전체를 data로
+          ws.send(JSON.stringify({ type: "result", source: source, data: data }));
           return;
         }
       } catch (e) {
@@ -166,7 +169,13 @@ async function callLLMFallback(prompt) {
       const results = [];
       for (const v of vectors) {
         const sc = cosine(qVec, v.vector);
-        results.push({ id: v.id, text: v.text, language: v.language, tags: v.tags, score: sc });
+        results.push({ 
+          id: v.id, 
+          text: v.text, 
+          trans: v.trans || null,  // trans가 없으면 null로 설정
+          tags: v.tags || [], 
+          score: sc 
+        });
       }
       results.sort((a, b) => b.score - a.score);
       const topK = results.slice(0, k);
@@ -176,10 +185,10 @@ async function callLLMFallback(prompt) {
         try {
           const gen = await callLLMFallback(queryText);
           // we return LLM output as fallback result along with empty topK
-          const fallback = [{ id: "llm_fallback", text: gen, language: "auto", tags: ["llm"], score: 1.0 }];
+          const fallback = [{ id: "llm_fallback", text: gen, trans: null, tags: ["llm"], score: 1.0 }];
           const final = { topK, fallback };
           // cache the LLM answer under the quantized key (optional)
-          try { await redis.set(qKey, JSON.stringify(final), "EX", CACHE_TTL); } catch(e) { fastify.log.warn("Redis set failed: "+e); }
+          try { await redis.set(qKey, JSON.stringify({ source: "llm", data: final }), "EX", CACHE_TTL); } catch(e) { fastify.log.warn("Redis set failed: "+e); }
           ws.send(JSON.stringify({ type: "result", source: "llm", data: final }));
           return;
         } catch (e) {
@@ -189,7 +198,7 @@ async function callLLMFallback(prompt) {
 
       // 5) Cache the topK result
       try {
-        await redis.set(qKey, JSON.stringify(topK), "EX", CACHE_TTL);
+        await redis.set(qKey, JSON.stringify({ source: "search", data: topK }), "EX", CACHE_TTL);
       } catch (e) {
         fastify.log.warn("Redis set failed: " + e);
       }

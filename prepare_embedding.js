@@ -33,7 +33,7 @@ async function main() {
   if (MOCK || !process.env.OPENAI_API_KEY) {
     console.log("Creating MOCK vectors (no OpenAI key found or --mock used).");
     for (const p of phrases) {
-      out.push({ id: p.id, text: p.text, language: p.language, tags: p.tags, vector: randomVector(1536) });
+      out.push({ id: p.id, text: p.text, trans: p.trans, tags: p.tags, vector: randomVector(1536) });
     }
     await fs.writeFile(VECTORS_FILE, JSON.stringify(out, null, 2), "utf8");
     console.log(`Wrote ${VECTORS_FILE} with mock vectors.`);
@@ -52,7 +52,7 @@ async function main() {
       });
 
       const vector = resp.data[0].embedding;
-      out.push({ id: p.id, text: p.text, language: p.language, tags: p.tags, vector });
+      out.push({ id: p.id, text: p.text, trans: p.trans, tags: p.tags, vector });
       // be polite if many requests - tiny sleep (optional)
       await new Promise(r => setTimeout(r, 50));
     } catch (err) {

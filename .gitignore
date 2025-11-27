@@ -1,0 +1,150 @@
+# ============================================
+# 환경 변수 및 시크릿 파일
+# ============================================
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+*.key
+*.pem
+*.cert
+
+# ============================================
+# Node.js
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# 패키지 관리자 잠금 파일 (선택사항 - 보통은 커밋함)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ============================================
+# 빌드 및 캐시
+# ============================================
+dist/
+build/
+.cache/
+.parcel-cache/
+.next/
+out/
+.nuxt/
+.vuepress/dist/
+
+# ============================================
+# 로그 파일
+# ============================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ============================================
+# 운영 체제 파일
+# ============================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================
+# IDE 및 에디터
+# ============================================
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ IDEA / WebStorm
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ============================================
+# Docker
+# ============================================
+.dockerignore
+
+# ============================================
+# 테스트 및 커버리지
+# ============================================
+coverage/
+*.lcov
+.nyc_output/
+.coverage/
+htmlcov/
+.pytest_cache/
+.tox/
+
+# ============================================
+# 임시 파일
+# ============================================
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*~
+.cache/
+
+# ============================================
+# 프로젝트 특정 파일 (필요시 주석 해제)
+# ============================================
+# vectors.json  # 벡터 데이터가 크거나 민감한 경우
+# phrases.json  # 문구 데이터가 민감한 경우
+
