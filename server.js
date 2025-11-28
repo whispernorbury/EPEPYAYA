@@ -6,22 +6,15 @@ dotenv.config();
 import Fastify from "fastify";
 import { WebSocketServer } from "ws";
 import Redis from "ioredis";
-import { OpenAI } from "openai";
-import { pipeline } from "@xenova/transformers";
 
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 const VECTORS_FILE = "./vectors.json";
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 const CACHE_TTL = parseInt(process.env.CACHE_TTL_SECONDS || "3600");
-const MIN_SCORE_THRESHOLD = parseFloat(process.env.MIN_SCORE_THRESHOLD || "0.75");
 const QUANTIZE_DECIMALS = parseInt(process.env.QUANTIZE_DECIMALS || "2");
 const QUANTIZE_DIM_PREFIX = parseInt(process.env.QUANTIZE_DIM_PREFIX || "8");
 
-const EMBEDDING_MODEL = process.env.EMBEDDING_MODEL || "Xenova/bge-m3";
-const CHAT_MODEL = process.env.CHAT_MODEL || "gpt-4o-mini"; // change to your finetuned model if any
-
-// 전역 모델 인스턴스 (한 번만 로드)
-let embeddingPipeline = null;
+const EMBEDDING_SERVICE_URL = process.env.EMBEDDING_SERVICE_URL || "http://embedding-service:8000";
 
 // utils
 function dot(a, b) {
@@ -49,68 +42,46 @@ async function loadVectors() {
   return JSON.parse(raw);
 }
 
-async function getEmbeddingPipeline() {
-  if (embeddingPipeline === null) {
-    console.log(`Loading embedding model: ${EMBEDDING_MODEL}`);
-    try {
-      // BGE-m3는 양자화된 ONNX 모델이 없으므로 quantized: false 옵션 사용
-      embeddingPipeline = await pipeline('feature-extraction', EMBEDDING_MODEL, {
-        quantized: false
-      });
-      console.log(`Model ${EMBEDDING_MODEL} loaded successfully!`);
-    } catch (error) {
-      console.error(`Failed to load model ${EMBEDDING_MODEL}:`, error);
-      throw error;
-    }
-  }
-  return embeddingPipeline;
-}
-
 async function createEmbedding(text) {
   try {
-    const pipe = await getEmbeddingPipeline();
-    
-    // BGE-m3 모델로 임베딩 생성
-    const output = await pipe(text, {
-      pooling: 'mean',
-      normalize: true
+    // Python 임베딩 서비스 호출
+    const response = await fetch(`${EMBEDDING_SERVICE_URL}/embed`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ text: text }),
     });
-    
-    // output은 텐서 객체이므로 배열로 변환
-    // output.data가 Float32Array인 경우와 output이 직접 배열인 경우 모두 처리
-    let embedding;
-    if (output.data) {
-      embedding = Array.from(output.data);
-    } else if (Array.isArray(output)) {
-      embedding = output;
-    } else if (output.tolist) {
-      embedding = output.tolist();
-    } else {
-      // 텐서를 직접 배열로 변환 시도
-      embedding = Array.from(output);
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Embedding service error: ${response.status} ${errorText}`);
     }
-    
-    return embedding;
+
+    const data = await response.json();
+    return data.embedding;
   } catch (error) {
     console.error("Embedding error:", error);
     throw new Error(`Failed to create embedding: ${error.message}`);
   }
 }
 
-async function callLLMFallback(prompt) {
-  if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY not set");
-  const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-  const resp = await client.chat.completions.create({
-    model: CHAT_MODEL,
-    messages: [{ role: "user", content: prompt }],
-    max_tokens: 200
-  });
-  return resp.choices?.[0]?.message?.content ?? "";
-}
-
 (async () => {
-  console.log("Loading embedding model...");
-  await getEmbeddingPipeline(); // 모델 미리 로드
+  // Python 임베딩 서비스 헬스 체크
+  console.log(`Checking embedding service at ${EMBEDDING_SERVICE_URL}...`);
+  try {
+    const healthResponse = await fetch(`${EMBEDDING_SERVICE_URL}/health`);
+    if (healthResponse.ok) {
+      const health = await healthResponse.json();
+      console.log(`Embedding service is ready: ${health.model}`);
+    } else {
+      console.warn(`Embedding service health check failed: ${healthResponse.status}`);
+    }
+  } catch (error) {
+    console.warn(`Could not connect to embedding service: ${error.message}`);
+    console.warn("Server will start but embedding requests may fail until service is ready.");
+  }
+
   console.log("Loading vectors...");
   const vectors = await loadVectors();
   console.log(`Loaded ${vectors.length} vectors into memory.`);
@@ -128,6 +99,7 @@ async function callLLMFallback(prompt) {
       uptime: process.uptime(),
       vectors: vectors.length,
       redis: 'unknown',
+      embedding_service: 'unknown',
       version: process.env.npm_package_version || '1.0.0'
     };
     
@@ -139,6 +111,21 @@ async function callLLMFallback(prompt) {
       health.status = 'degraded';
       health.error = e.message;
     }
+
+    // 임베딩 서비스 헬스 체크
+    try {
+      const embeddingHealth = await fetch(`${EMBEDDING_SERVICE_URL}/health`);
+      if (embeddingHealth.ok) {
+        const embeddingData = await embeddingHealth.json();
+        health.embedding_service = embeddingData.model_loaded ? 'ready' : 'not_loaded';
+      } else {
+        health.embedding_service = 'unavailable';
+        health.status = 'degraded';
+      }
+    } catch (e) {
+      health.embedding_service = 'unavailable';
+      health.status = 'degraded';
+    }
     
     const statusCode = health.status === 'ok' ? 200 : 503;
     return reply.code(statusCode).send(health);
@@ -148,7 +135,7 @@ async function callLLMFallback(prompt) {
 
   wss.on("connection", (ws) => {
     ws.on("message", async (message) => {
-      // Expect message JSON: {type:"query", text:"...", lang:"ko", k:5}
+      // Expect message JSON: {type:"query", text:"...", k:5}
       let msg;
       try { msg = JSON.parse(message.toString()); } catch (e) {
         ws.send(JSON.stringify({ type: "error", error: "invalid_json" }));
@@ -162,7 +149,6 @@ async function callLLMFallback(prompt) {
 
       const queryText = String(msg.text);
       const k = msg.k ? parseInt(msg.k) : 5;
-      const mode = msg.mode || "search"; // "search" or "llm_fallback"
       
       // 입력 검증
       if (queryText.length > 1000) {
@@ -215,25 +201,15 @@ async function callLLMFallback(prompt) {
       results.sort((a, b) => b.score - a.score);
       const topK = results.slice(0, k);
 
-      // 4) Mode에 따라 처리
-      if (mode === "search") {
-        // search 모드: DB 검색만 수행, 자동 fallback 없음
-        // 5) Cache the topK result
-        try {
-          await redis.set(qKey, JSON.stringify({ source: "search", data: topK }), "EX", CACHE_TTL);
-        } catch (e) {
-          fastify.log.warn("Redis set failed: " + e);
-        }
-
-        // 6) Send results via WebSocket
-        ws.send(JSON.stringify({ type: "result", source: "search", data: topK }));
-      } else if (mode === "llm_fallback") {
-        // llm_fallback 모드: LLM fallback 로직은 나중에 구현
-        // TODO: LLM fallback 로직 구현
-        ws.send(JSON.stringify({ type: "error", error: "llm_fallback_mode_not_implemented", message: "LLM fallback mode is not yet implemented" }));
-      } else {
-        ws.send(JSON.stringify({ type: "error", error: "invalid_mode", message: `Invalid mode: ${mode}. Use "search" or "llm_fallback"` }));
+      // 4) Cache the topK result
+      try {
+        await redis.set(qKey, JSON.stringify({ source: "search", data: topK }), "EX", CACHE_TTL);
+      } catch (e) {
+        fastify.log.warn("Redis set failed: " + e);
       }
+
+      // 5) Send results via WebSocket
+      ws.send(JSON.stringify({ type: "result", source: "search", data: topK }));
     });
 
     ws.send(JSON.stringify({ type: "welcome", msg: "connected" }));

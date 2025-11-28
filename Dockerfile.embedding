@@ -1,0 +1,28 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# 시스템 패키지 설치
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Python 의존성 설치
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 애플리케이션 파일 복사
+COPY embedding_service.py ./
+
+# 환경 변수
+ENV EMBEDDING_MODEL=BAAI/bge-m3
+ENV EMBEDDING_SERVICE_PORT=8000
+ENV USE_FP16=true
+
+EXPOSE 8000
+
+# 헬스체크 (선택사항)
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')" || exit 1
+
+CMD ["python", "embedding_service.py"]
