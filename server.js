@@ -16,8 +16,9 @@ const MIN_SCORE_THRESHOLD = parseFloat(process.env.MIN_SCORE_THRESHOLD || "0.75"
 const QUANTIZE_DECIMALS = parseInt(process.env.QUANTIZE_DECIMALS || "2");
 const QUANTIZE_DIM_PREFIX = parseInt(process.env.QUANTIZE_DIM_PREFIX || "8");
 
-const MODEL = process.env.OPENAI_MODEL || "text-embedding-3-small";
+const EMBEDDING_MODEL = process.env.EMBEDDING_MODEL || "jhgan/ko-sroberta-multitask";
 const CHAT_MODEL = process.env.CHAT_MODEL || "gpt-4o-mini"; // change to your finetuned model if any
+const EMBEDDING_SERVICE_URL = process.env.EMBEDDING_SERVICE_URL || "http://embedding:5000";
 
 // utils
 function dot(a, b) {
@@ -45,23 +46,33 @@ async function loadVectors() {
   return JSON.parse(raw);
 }
 
-function randomVector(dim = 1536) {
-  return Array.from({ length: dim }, () => (Math.random() - 0.5));
-}
-
-async function createEmbeddingOpenAI(text) {
-  // Mock mode: return random vector if MOCK_MODE is set or no valid API key
-  if (process.env.MOCK_MODE === "true" || !process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY === "sk-xxxx" || process.env.OPENAI_API_KEY === "") {
-    console.warn("MOCK MODE: Using random embedding vector");
-    return randomVector(1536);
-  }
+async function createEmbedding(text) {
+  // Use Python embedding HTTP service
   try {
-    const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-    const r = await client.embeddings.create({ model: MODEL, input: text });
-    return r.data[0].embedding;
-  } catch (e) {
-    console.warn("OpenAI API failed, falling back to MOCK MODE:", e.message);
-    return randomVector(1536);
+    const response = await fetch(`${EMBEDDING_SERVICE_URL}/embed`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ text }),
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ error: response.statusText }));
+      throw new Error(`Embedding service error: ${error.error || response.statusText}`);
+    }
+
+    const result = await response.json();
+    if (result.error) {
+      throw new Error(`Embedding error: ${result.error}`);
+    }
+    
+    return result.vector;
+  } catch (error) {
+    if (error.message.includes("fetch")) {
+      throw new Error(`Failed to connect to embedding service at ${EMBEDDING_SERVICE_URL}`);
+    }
+    throw error;
   }
 }
 
@@ -128,6 +139,7 @@ async function callLLMFallback(prompt) {
 
       const queryText = String(msg.text);
       const k = msg.k ? parseInt(msg.k) : 5;
+      const mode = msg.mode || "search"; // "search" or "llm_fallback"
       
       // 입력 검증
       if (queryText.length > 1000) {
@@ -142,7 +154,7 @@ async function callLLMFallback(prompt) {
       // 1) Compute embedding (server-side)
       let qVec;
       try {
-        qVec = await createEmbeddingOpenAI(queryText);
+        qVec = await createEmbedding(queryText);
       } catch (e) {
         ws.send(JSON.stringify({ type: "error", error: "embedding_failed", details: String(e) }));
         return;
@@ -180,31 +192,25 @@ async function callLLMFallback(prompt) {
       results.sort((a, b) => b.score - a.score);
       const topK = results.slice(0, k);
 
-      // 4) If top score < threshold -> call LLM fallback (optional)
-      if (topK.length === 0 || topK[0].score < MIN_SCORE_THRESHOLD) {
+      // 4) Mode에 따라 처리
+      if (mode === "search") {
+        // search 모드: DB 검색만 수행, 자동 fallback 없음
+        // 5) Cache the topK result
         try {
-          const gen = await callLLMFallback(queryText);
-          // we return LLM output as fallback result along with empty topK
-          const fallback = [{ id: "llm_fallback", text: gen, trans: null, tags: ["llm"], score: 1.0 }];
-          const final = { topK, fallback };
-          // cache the LLM answer under the quantized key (optional)
-          try { await redis.set(qKey, JSON.stringify({ source: "llm", data: final }), "EX", CACHE_TTL); } catch(e) { fastify.log.warn("Redis set failed: "+e); }
-          ws.send(JSON.stringify({ type: "result", source: "llm", data: final }));
-          return;
+          await redis.set(qKey, JSON.stringify({ source: "search", data: topK }), "EX", CACHE_TTL);
         } catch (e) {
-          fastify.log.error("LLM fallback failed: " + e);
+          fastify.log.warn("Redis set failed: " + e);
         }
-      }
 
-      // 5) Cache the topK result
-      try {
-        await redis.set(qKey, JSON.stringify({ source: "search", data: topK }), "EX", CACHE_TTL);
-      } catch (e) {
-        fastify.log.warn("Redis set failed: " + e);
+        // 6) Send results via WebSocket
+        ws.send(JSON.stringify({ type: "result", source: "search", data: topK }));
+      } else if (mode === "llm_fallback") {
+        // llm_fallback 모드: LLM fallback 로직은 나중에 구현
+        // TODO: LLM fallback 로직 구현
+        ws.send(JSON.stringify({ type: "error", error: "llm_fallback_mode_not_implemented", message: "LLM fallback mode is not yet implemented" }));
+      } else {
+        ws.send(JSON.stringify({ type: "error", error: "invalid_mode", message: `Invalid mode: ${mode}. Use "search" or "llm_fallback"` }));
       }
-
-      // 6) Send results via WebSocket
-      ws.send(JSON.stringify({ type: "result", source: "search", data: topK }));
     });
 
     ws.send(JSON.stringify({ type: "welcome", msg: "connected" }));

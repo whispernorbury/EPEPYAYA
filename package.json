@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "prepare:embeddings": "node prepare_embedding.js"
+    "prepare:embeddings": "python3 prepare_embedding.py"
   },
   "dependencies": {
     "fastify": "^4.22.0",

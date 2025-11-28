@@ -1,32 +1,2702 @@
 [
-  {"id":"p1","text":"식당 어디에 있어요?","trans":{"jp":"レストランはどこにありますか？","us":"Where is the restaurant?","cn":"餐厅在哪里？"},"tags":["여행","식당"]},
-  {"id":"p2","text":"추천 메뉴가 뭐예요?","trans":{"jp":"おすすめメニューは何ですか？","us":"What is the recommended menu?","cn":"推荐菜单是什么？"},"tags":["식당","추천"]},
-  {"id":"p3","text":"계산서 부탁드립니다.","trans":{"jp":"お会計をお願いします。","us":"Check, please.","cn":"请结账。"},"tags":["식당","결제"]},
-  {"id":"p4","text":"예약했는데 이름은 ___ 입니다.","trans":{"jp":"予約しましたが、名前は___です。","us":"I made a reservation, the name is ___.","cn":"我预订了，名字是___。"},"tags":["호텔","예약"]},
-  {"id":"p5","text":"화장실이 어디에 있나요?","trans":{"jp":"トイレはどこにありますか？","us":"Where is the restroom?","cn":"洗手间在哪里？"},"tags":["기본","길찾기"]},
-  {"id":"p6","text":"공항까지 어떻게 가나요?","trans":{"jp":"空港までどうやって行きますか？","us":"How do I get to the airport?","cn":"怎么去机场？"},"tags":["교통","공항"]},
-  {"id":"p7","text":"이 근처에 약국 있어요?","trans":{"jp":"この近くに薬局はありますか？","us":"Is there a pharmacy nearby?","cn":"附近有药店吗？"},"tags":["긴급","약국"]},
-  {"id":"p8","text":"영수증 주세요.","trans":{"jp":"領収書をください。","us":"Receipt, please.","cn":"请给我收据。"},"tags":["결제"]},
-  {"id":"p9","text":"이거 얼마예요?","trans":{"jp":"これはいくらですか？","us":"How much is this?","cn":"这个多少钱？"},"tags":["쇼핑","가격"]},
-  {"id":"p10","text":"카드 받나요?","trans":{"jp":"カードは使えますか？","us":"Do you accept cards?","cn":"可以用卡吗？"},"tags":["결제","쇼핑"]},
-  {"id":"p11","text":"도와주실 수 있나요?","trans":{"jp":"手伝っていただけますか？","us":"Can you help me?","cn":"你能帮我吗？"},"tags":["긴급"]},
-  {"id":"p12","text":"저기요, 메뉴 추천해 주세요.","trans":{"jp":"すみません、メニューを推薦してください。","us":"Excuse me, please recommend a menu.","cn":"不好意思，请推荐菜单。"},"tags":["식당","추천"]},
-  {"id":"p13","text":"와이파이 비밀번호 무엇인가요?","trans":{"jp":"Wi-Fiのパスワードは何ですか？","us":"What is the Wi-Fi password?","cn":"Wi-Fi密码是什么？"},"tags":["기본","호텔"]},
-  {"id":"p14","text":"이 근처에 관광명소 있나요?","trans":{"jp":"この近くに観光名所はありますか？","us":"Are there any tourist attractions nearby?","cn":"附近有旅游景点吗？"},"tags":["관광","질문"]},
-  {"id":"p15","text":"가는 길을 알려 주세요.","trans":{"jp":"行き方を教えてください。","us":"Please tell me the way.","cn":"请告诉我怎么走。"},"tags":["길찾기"]},
-  {"id":"p16","text":"도착 시간이 몇 시예요?","trans":{"jp":"到着時間は何時ですか？","us":"What time is the arrival?","cn":"到达时间是几点？"},"tags":["교통","시간"]},
-  {"id":"p17","text":"여기 사진 좀 찍어주실래요?","trans":{"jp":"ここで写真を撮っていただけますか？","us":"Can you take a photo here?","cn":"能在这里拍张照吗？"},"tags":["예의","요청"]},
-  {"id":"p18","text":"영어(또는 일본어)로 말해 주실 수 있나요?","trans":{"jp":"英語（または日本語）で話していただけますか？","us":"Can you speak English (or Japanese)?","cn":"你能说英语（或日语）吗？"},"tags":["언어"]},
-  {"id":"p19","text":"짐을 맡아도 될까요?","trans":{"jp":"荷物を預けてもいいですか？","us":"Can I leave my luggage?","cn":"可以寄存行李吗？"},"tags":["호텔","서비스"]},
-  {"id":"p20","text":"여기에서 체크아웃하고 싶어요.","trans":{"jp":"ここでチェックアウトしたいです。","us":"I want to check out here.","cn":"我想在这里退房。"},"tags":["호텔","체크아웃"]},
-  {"id":"p21","text":"지갑을 잃어버렸어요.","trans":{"jp":"財布をなくしました。","us":"I lost my wallet.","cn":"我丢了钱包。"},"tags":["긴급","분실"]},
-  {"id":"p22","text":"병원에 가야 하나요?","trans":{"jp":"病院に行くべきですか？","us":"Should I go to the hospital?","cn":"我应该去医院吗？"},"tags":["의료","긴급"]},
-  {"id":"p23","text":"영업시간이 어떻게 되나요?","trans":{"jp":"営業時間はどうなっていますか？","us":"What are the business hours?","cn":"营业时间是什么？"},"tags":["영업","시간"]},
-  {"id":"p24","text":"이 근처에서 가장 가까운 지하철역은?","trans":{"jp":"この近くで最も近い地下鉄駅は？","us":"What is the nearest subway station nearby?","cn":"附近最近的地铁站是？"},"tags":["교통","지하철"]},
-  {"id":"p25","text":"메뉴에 이 재료가 들어가나요? (알레르기)","trans":{"jp":"メニューにこの材料が入っていますか？（アレルギー）","us":"Does this menu contain this ingredient? (Allergy)","cn":"菜单里有这个材料吗？（过敏）"},"tags":["식당","알레르기"]},
-  {"id":"p26","text":"추천해주신 곳까지 어떻게 가나요?","trans":{"jp":"推薦していただいた場所までどうやって行きますか？","us":"How do I get to the place you recommended?","cn":"怎么去您推荐的地方？"},"tags":["길찾기","추천"]},
-  {"id":"p27","text":"이 가격에 흥정할 수 있나요?","trans":{"jp":"この価格で交渉できますか？","us":"Can I negotiate this price?","cn":"这个价格可以讲价吗？"},"tags":["쇼핑","흥정"]},
-  {"id":"p28","text":"사진 촬영 허가가 필요하나요?","trans":{"jp":"写真撮影の許可が必要ですか？","us":"Do I need permission to take photos?","cn":"需要拍照许可吗？"},"tags":["관광","규정"]},
-  {"id":"p29","text":"여권을 보여드려야 하나요?","trans":{"jp":"パスポートを見せる必要がありますか？","us":"Do I need to show my passport?","cn":"需要出示护照吗？"},"tags":["출입국","서류"]},
-  {"id":"p30","text":"잘 먹었습니다.","trans":{"jp":"ごちそうさまでした。","us":"Thank you for the meal.","cn":"谢谢款待。"},"tags":["식당","인사"]}
+  {
+    "id": 1,
+    "text": "탑승 수속 어디에서 하나요?",
+    "trans": {
+      "jp": "どこで搭乗手続きができますか？",
+      "us": "Where can I check in?",
+      "cn": "请问在哪里办理登机手续？"
+    }
+  },
+  {
+    "id": 2,
+    "text": "제 여권을 보여드릴게요.",
+    "trans": {
+      "jp": "パスポートをお見せします。",
+      "us": "Here is my passport.",
+      "cn": "给您看一下我的护照。"
+    }
+  },
+  {
+    "id": 3,
+    "text": "수하물 어디서 찾나요?",
+    "trans": {
+      "jp": "手荷物はどこで受け取れますか？",
+      "us": "Where is the baggage claim?",
+      "cn": "请问在哪里取行李？"
+    }
+  },
+  {
+    "id": 4,
+    "text": "기내 수하물 허용 무게가 어떻게 되나요?",
+    "trans": {
+      "jp": "機内持ち込み手荷物の重量制限はどれくらいですか？",
+      "us": "What is the weight limit for carry-on luggage?",
+      "cn": "请问随身携带行李的限重是多少？"
+    }
+  },
+  {
+    "id": 5,
+    "text": "위탁 수하물 허용 무게가 어떻게 되나요?",
+    "trans": {
+      "jp": "預け入れ荷物の重量制限はどれくらいですか？",
+      "us": "What is the weight limit for checked baggage?",
+      "cn": "请问托运行李的限重是多少？"
+    }
+  },
+  {
+    "id": 6,
+    "text": "기내 수하물 허용 규격이 어떻게 되나요?",
+    "trans": {
+      "jp": "機内持ち込み手荷物のサイズ制限はどれくらいですか？",
+      "us": "What are the size limits for carry-on luggage?",
+      "cn": "请问随身携带行李的尺寸限制是多少？"
+    }
+  },
+  {
+    "id": 7,
+    "text": "위탁 수하물 허용 규격이 어떻게 되나요?",
+    "trans": {
+      "jp": "預け入れ荷物のサイズ制限はどれくらいですか？",
+      "us": "What are the size limits for checked baggage?",
+      "cn": "请问托运行李的尺寸限制是多少？"
+    }
+  },
+  {
+    "id": 8,
+    "text": "제 좌석은 어디인가요?",
+    "trans": {
+      "jp": "私の席はどこですか？",
+      "us": "Could you help me find my seat?",
+      "cn": "请问我的座位在哪里？"
+    }
+  },
+  {
+    "id": 9,
+    "text": "창가 자리로 바꿔줄 수 있나요?",
+    "trans": {
+      "jp": "窓側の席に変更できますか？",
+      "us": "Would it be possible to switch to a window seat?",
+      "cn": "能帮我换到靠窗的座位吗？"
+    }
+  },
+  {
+    "id": 10,
+    "text": "통로 자리로 바꿔줄 수 있나요?",
+    "trans": {
+      "jp": "通路側の席に変更できますか？",
+      "us": "Would it be possible to switch to an aisle seat?",
+      "cn": "能帮我换到过道的座位吗？"
+    }
+  },
+  {
+    "id": 11,
+    "text": "출국 심사 어디로 가야 하나요?",
+    "trans": {
+      "jp": "出国審査はどこへ行けばいいですか？",
+      "us": "Where do I go for immigration?",
+      "cn": "请问出境审查往哪边走？"
+    }
+  },
+  {
+    "id": 12,
+    "text": "세관 신고서 작성해야 하나요?",
+    "trans": {
+      "jp": "税関申告書の記入は必要ですか？",
+      "us": "Do I need to fill out a customs declaration form?",
+      "cn": "请问需要填写海关申报单吗？"
+    }
+  },
+  {
+    "id": 13,
+    "text": "면세점은 어디인가요?",
+    "trans": {
+      "jp": "免税店はどこですか？",
+      "us": "Where is the duty-free shop?",
+      "cn": "请问免税店在哪里？"
+    }
+  },
+  {
+    "id": 14,
+    "text": "비행기 연착됐나요?",
+    "trans": {
+      "jp": "飛行機は遅れていますか？",
+      "us": "Is the flight delayed?",
+      "cn": "航班延误了吗？"
+    }
+  },
+  {
+    "id": 15,
+    "text": "탑승구가 어디로 변경됐나요?",
+    "trans": {
+      "jp": "搭乗口はどこに変更になりましたか？",
+      "us": "Which gate has the flight been changed to?",
+      "cn": "请问登机口变更到哪里了？"
+    }
+  },
+  {
+    "id": 16,
+    "text": "기내식은 언제 나오나요?",
+    "trans": {
+      "jp": "機内食はいつ出ますか？",
+      "us": "When will the meal be served?",
+      "cn": "请问什么时候提供飞机餐？"
+    }
+  },
+  {
+    "id": 17,
+    "text": "담요나 베개 좀 주세요.",
+    "trans": {
+      "jp": "毛布か枕をいただけますか？",
+      "us": "May I have a blanket or a pillow, please?",
+      "cn": "请给我一条毛毯或枕头。"
+    }
+  },
+  {
+    "id": 18,
+    "text": "좌석 벨트 매야 하나요?",
+    "trans": {
+      "jp": "シートベルトを締める必要がありますか？",
+      "us": "Do I need to fasten my seatbelt?",
+      "cn": "现在需要系安全带吗？"
+    }
+  },
+  {
+    "id": 19,
+    "text": "안전 규칙 안내 좀 보여주세요.",
+    "trans": {
+      "jp": "安全のしおりを見せていただけますか？",
+      "us": "Could I see the safety guide?",
+      "cn": "请给我看一下安全指南。"
+    }
+  },
+  {
+    "id": 20,
+    "text": "비상구 좌석으로 바꿔줄 수 있나요?",
+    "trans": {
+      "jp": "非常口席に変更できますか？",
+      "us": "Could I switch to an exit row seat?",
+      "cn": "能帮我换到安全出口旁边的座位吗？"
+    }
+  },
+  {
+    "id": 21,
+    "text": "제 수하물이 분실됐어요.",
+    "trans": {
+      "jp": "預けた荷物が見当たりません。",
+      "us": "My luggage seems to be missing.",
+      "cn": "我的行李丢了。"
+    }
+  },
+  {
+    "id": 22,
+    "text": "와이파이 있나요?",
+    "trans": {
+      "jp": "Wi-Fiはありますか？",
+      "us": "Is Wi-Fi available on this flight?",
+      "cn": "请问有Wi-Fi吗？"
+    }
+  },
+  {
+    "id": 23,
+    "text": "충전 가능한 콘센트 있나요?",
+    "trans": {
+      "jp": "充電できるコンセントはありますか？",
+      "us": "Is there a power outlet I can use?",
+      "cn": "请问有充电插座吗？"
+    }
+  },
+  {
+    "id": 24,
+    "text": "여기서 담배 피울 수 있나요?",
+    "trans": {
+      "jp": "ここでタバコを吸ってもいいですか？",
+      "us": "Is smoking allowed here?",
+      "cn": "请问这里可以吸烟吗？"
+    }
+  },
+  {
+    "id": 25,
+    "text": "비행기 지연 이유가 뭐예요?",
+    "trans": {
+      "jp": "遅延の理由は何ですか？",
+      "us": "Could you tell me the reason for the delay?",
+      "cn": "请问航班延误的原因是什么？"
+    }
+  },
+  {
+    "id": 26,
+    "text": "환승 게이트 어디인가요?",
+    "trans": {
+      "jp": "乗り継ぎゲートはどこですか？",
+      "us": "Where is the transfer gate?",
+      "cn": "请问转机登机口在哪里？"
+    }
+  },
+  {
+    "id": 27,
+    "text": "체크인 카운터 어디인가요?",
+    "trans": {
+      "jp": "チェックインカウンターはどこですか？",
+      "us": "Where is the check-in counter?",
+      "cn": "请问值机柜台在哪里？"
+    }
+  },
+  {
+    "id": 28,
+    "text": "좌석 업그레이드 가능할까요?",
+    "trans": {
+      "jp": "座席のアップグレードは可能ですか？",
+      "us": "Is it possible to upgrade my seat?",
+      "cn": "请问可以升舱吗？"
+    }
+  },
+  {
+    "id": 29,
+    "text": "좌석 변경 수수료는 얼마예요?",
+    "trans": {
+      "jp": "座席の変更手数料はいくらですか？",
+      "us": "How much is the fee to change seats?",
+      "cn": "请问更改座位的费用是多少？"
+    }
+  },
+  {
+    "id": 30,
+    "text": "기내 서비스 만족스러웠어요.",
+    "trans": {
+      "jp": "機内サービスはとても良かったです。",
+      "us": "I was very satisfied with the in-flight service.",
+      "cn": "机上服务很满意。"
+    }
+  },
+  {
+    "id": 31,
+    "text": "아이 동반석 어디인가요?",
+    "trans": {
+      "jp": "お子様連れ用の席はどこですか？",
+      "us": "Where is the seating for passengers with children?",
+      "cn": "请问带孩子的座位在哪里？"
+    }
+  },
+  {
+    "id": 32,
+    "text": "수하물 초과 요금 얼마예요?",
+    "trans": {
+      "jp": "超過手荷物料金はいくらですか？",
+      "us": "How much is the excess baggage fee?",
+      "cn": "请问行李超重费是多少？"
+    }
+  },
+  {
+    "id": 33,
+    "text": "공항 라운지 어디인가요?",
+    "trans": {
+      "jp": "空港ラウンジはどこですか？",
+      "us": "Where is the airport lounge?",
+      "cn": "请问机场休息室在哪里？"
+    }
+  },
+  {
+    "id": 34,
+    "text": "체크인 하고 싶어요.",
+    "trans": {
+      "jp": "チェックインをお願いします。",
+      "us": "I would like to check in.",
+      "cn": "我想办理入住。"
+    }
+  },
+  {
+    "id": 35,
+    "text": "여행하러 왔어요.",
+    "trans": {
+      "jp": "観光で来ました。",
+      "us": "I am here for a trip.",
+      "cn": "我是来旅游的。"
+    }
+  },
+  {
+    "id": 36,
+    "text": "이건 어떻게 사용하나요?",
+    "trans": {
+      "jp": "これはどうやって使いますか？",
+      "us": "How do I use this?",
+      "cn": "请问这个怎么用？"
+    }
+  },
+  {
+    "id": 37,
+    "text": "예약 확인서 보여드릴게요.",
+    "trans": {
+      "jp": "予約確認書をお見せします。",
+      "us": "Here is my booking confirmation.",
+      "cn": "给您看一下预订确认单。"
+    }
+  },
+  {
+    "id": 38,
+    "text": "체크아웃 시간 언제예요?",
+    "trans": {
+      "jp": "チェックアウトは何時ですか？",
+      "us": "What time is check-out?",
+      "cn": "请问几点退房？"
+    }
+  },
+  {
+    "id": 39,
+    "text": "조식 포함되나요?",
+    "trans": {
+      "jp": "朝食は含まれていますか？",
+      "us": "Is breakfast included?",
+      "cn": "请问含早餐吗？"
+    }
+  },
+  {
+    "id": 40,
+    "text": "방 번호가 어디인가요?",
+    "trans": {
+      "jp": "部屋番号は何番ですか？",
+      "us": "What is my room number?",
+      "cn": "请问房间号是多少？"
+    }
+  },
+  {
+    "id": 41,
+    "text": "방에 들어가고 싶어요.",
+    "trans": {
+      "jp": "部屋に入りたいのですが。",
+      "us": "I would like to go to my room.",
+      "cn": "我想进房间。"
+    }
+  },
+  {
+    "id": 42,
+    "text": "방 키가 안 열려요.",
+    "trans": {
+      "jp": "鍵が開きません。",
+      "us": "My room key is not working.",
+      "cn": "房卡打不开门。"
+    }
+  },
+  {
+    "id": 43,
+    "text": "와이파이 비밀번호 알려주세요.",
+    "trans": {
+      "jp": "Wi-Fiのパスワードを教えてください。",
+      "us": "Could I have the Wi-Fi password, please?",
+      "cn": "请告诉我Wi-Fi密码。"
+    }
+  },
+  {
+    "id": 44,
+    "text": "에어컨 켤 수 있나요?",
+    "trans": {
+      "jp": "エアコンは使えますか？",
+      "us": "Can I turn on the air conditioner?",
+      "cn": "可以开空调吗？"
+    }
+  },
+  {
+    "id": 45,
+    "text": "방 청소 언제 해주나요?",
+    "trans": {
+      "jp": "部屋の掃除はいつしてもらえますか？",
+      "us": "When will my room be cleaned?",
+      "cn": "请问什么时候打扫房间？"
+    }
+  },
+  {
+    "id": 46,
+    "text": "수건 좀 더 주세요.",
+    "trans": {
+      "jp": "タオルをもう少しいただけますか？",
+      "us": "Could I have some extra towels, please?",
+      "cn": "请再给我一些毛巾。"
+    }
+  },
+  {
+    "id": 47,
+    "text": "샴푸, 칫솔 제공되나요?",
+    "trans": {
+      "jp": "シャンプーや歯ブラシはありますか？",
+      "us": "Do you provide shampoo and a toothbrush?",
+      "cn": "请问提供洗发水和牙刷吗？"
+    }
+  },
+  {
+    "id": 48,
+    "text": "금고 사용 방법 알려주세요.",
+    "trans": {
+      "jp": "金庫の使い方を教えてください。",
+      "us": "Could you show me how to use the safe?",
+      "cn": "请告诉我保险箱怎么用。"
+    }
+  },
+  {
+    "id": 49,
+    "text": "추가 침대 가능할까요?",
+    "trans": {
+      "jp": "エキストラベッドはお願いできますか？",
+      "us": "Would it be possible to get an extra bed?",
+      "cn": "可以加床吗？"
+    }
+  },
+  {
+    "id": 50,
+    "text": "짐 맡길 수 있나요?",
+    "trans": {
+      "jp": "荷物を預かってもらえますか？",
+      "us": "Could you store my luggage?",
+      "cn": "可以寄存行李吗？"
+    }
+  },
+  {
+    "id": 51,
+    "text": "룸서비스 주문하고 싶어요.",
+    "trans": {
+      "jp": "ルームサービスをお願いします。",
+      "us": "I would like to order room service.",
+      "cn": "我想叫客房服务。"
+    }
+  },
+  {
+    "id": 52,
+    "text": "수영장 어디인가요?",
+    "trans": {
+      "jp": "プールはどこですか？",
+      "us": "Where is the swimming pool?",
+      "cn": "请问游泳池在哪里？"
+    }
+  },
+  {
+    "id": 53,
+    "text": "헬스장 사용 가능한가요?",
+    "trans": {
+      "jp": "ジムは利用できますか？",
+      "us": "Is the fitness center available?",
+      "cn": "可以使用健身房吗？"
+    }
+  },
+  {
+    "id": 54,
+    "text": "아침 일찍 체크아웃할 거예요.",
+    "trans": {
+      "jp": "朝早くチェックアウトします。",
+      "us": "I will be checking out early in the morning.",
+      "cn": "我要一早退房。"
+    }
+  },
+  {
+    "id": 55,
+    "text": "공항까지 픽업 가능할까요?",
+    "trans": {
+      "jp": "空港までの送迎はありますか？",
+      "us": "Do you offer a shuttle service to the airport?",
+      "cn": "请问有送机服务吗？"
+    }
+  },
+  {
+    "id": 56,
+    "text": "택시 불러주세요.",
+    "trans": {
+      "jp": "タクシーを呼んでいただけますか？",
+      "us": "Could you call a taxi for me, please?",
+      "cn": "请帮我叫一辆出租车。"
+    }
+  },
+  {
+    "id": 57,
+    "text": "방에 문제가 있어요.",
+    "trans": {
+      "jp": "部屋に問題があります。",
+      "us": "There is a problem with my room.",
+      "cn": "房间有点问题。"
+    }
+  },
+  {
+    "id": 58,
+    "text": "물이 안 나와요.",
+    "trans": {
+      "jp": "水が出ません。",
+      "us": "The water is not running.",
+      "cn": "不出水了。"
+    }
+  },
+  {
+    "id": 59,
+    "text": "전기 콘센트가 안 돼요.",
+    "trans": {
+      "jp": "コンセントが使えません。",
+      "us": "The power outlet is not working.",
+      "cn": "插座没电。"
+    }
+  },
+  {
+    "id": 60,
+    "text": "호텔 근처 식당 추천해 주세요.",
+    "trans": {
+      "jp": "ホテル周辺のおすすめのレストランを教えてください。",
+      "us": "Could you recommend a restaurant near the hotel?",
+      "cn": "请推荐一下酒店附近的餐厅。"
+    }
+  },
+  {
+    "id": 61,
+    "text": "조용한 방으로 바꿔 주세요.",
+    "trans": {
+      "jp": "静かな部屋に変えていただけますか？",
+      "us": "Could you please move me to a quieter room?",
+      "cn": "请帮我换到安静的房间。"
+    }
+  },
+  {
+    "id": 62,
+    "text": "창문이 안 열려요.",
+    "trans": {
+      "jp": "窓が開きません。",
+      "us": "The window won't open.",
+      "cn": "窗户打不开。"
+    }
+  },
+  {
+    "id": 63,
+    "text": "카드 결제 가능한가요?",
+    "trans": {
+      "jp": "クレジットカードは使えますか？",
+      "us": "Do you accept credit cards?",
+      "cn": "请问可以刷卡吗？"
+    }
+  },
+  {
+    "id": 64,
+    "text": "현금 결제 가능한가요?",
+    "trans": {
+      "jp": "現金で支払えますか？",
+      "us": "Do you accept cash?",
+      "cn": "请问可以用现金吗？"
+    }
+  },
+  {
+    "id": 65,
+    "text": "환전 가능한가요?",
+    "trans": {
+      "jp": "両替はできますか？",
+      "us": "Is currency exchange available here?",
+      "cn": "请问可以兑换外币吗？"
+    }
+  },
+  {
+    "id": 66,
+    "text": "주차장 어디인가요?",
+    "trans": {
+      "jp": "駐車場はどこですか？",
+      "us": "Where is the parking lot?",
+      "cn": "请问停车场在哪里？"
+    }
+  },
+  {
+    "id": 67,
+    "text": "환전소가 어디인가요?",
+    "trans": {
+      "jp": "両替所はどこですか？",
+      "us": "Where is the currency exchange office?",
+      "cn": "请问货币兑换处在哪里？"
+    }
+  },
+  {
+    "id": 68,
+    "text": "예약 취소하고 싶어요.",
+    "trans": {
+      "jp": "予約をキャンセルしたいのですが。",
+      "us": "I would like to cancel my reservation.",
+      "cn": "我想取消预订。"
+    }
+  },
+  {
+    "id": 69,
+    "text": "호텔 셔틀 시간 알려주세요.",
+    "trans": {
+      "jp": "ホテルのシャトルバスの時間を教えてください。",
+      "us": "Could you tell me the schedule for the hotel shuttle?",
+      "cn": "请告诉我酒店班车的时间。"
+    }
+  },
+  {
+    "id": 70,
+    "text": "추가 요금이 있나요?",
+    "trans": {
+      "jp": "追加料金はかかりますか？",
+      "us": "Is there an extra charge for that?",
+      "cn": "请问有额外费用吗？"
+    }
+  },
+  {
+    "id": 71,
+    "text": "금연실로 바꿔 주세요.",
+    "trans": {
+      "jp": "禁煙ルームに変えていただけますか？",
+      "us": "Could you change my room to a non-smoking one?",
+      "cn": "请帮我换到无烟房。"
+    }
+  },
+  {
+    "id": 72,
+    "text": "로비에서 기다릴게요.",
+    "trans": {
+      "jp": "ロビーで待っています。",
+      "us": "I will wait in the lobby.",
+      "cn": "我在大堂等。"
+    }
+  },
+  {
+    "id": 73,
+    "text": "안내 데스크 어디인가요?",
+    "trans": {
+      "jp": "インフォメーションデスクはどこですか？",
+      "us": "Where is the information desk?",
+      "cn": "请问服务台在哪里？"
+    }
+  },
+  {
+    "id": 74,
+    "text": "짐이 방에 도착했나요?",
+    "trans": {
+      "jp": "荷物は部屋に届いていますか？",
+      "us": "Has my luggage arrived in my room?",
+      "cn": "我的行李送到房间了吗？"
+    }
+  },
+  {
+    "id": 75,
+    "text": "방 안에서 음식 먹어도 되나요?",
+    "trans": {
+      "jp": "部屋で食事をしてもいいですか？",
+      "us": "Am I allowed to eat inside the room?",
+      "cn": "请问可以在房间里吃东西吗？"
+    }
+  },
+  {
+    "id": 76,
+    "text": "석식 포함되나요?",
+    "trans": {
+      "jp": "夕食は含まれていますか？",
+      "us": "Is dinner included?",
+      "cn": "请问含晚餐吗？"
+    }
+  },
+  {
+    "id": 77,
+    "text": "조식 시간이 언제인가요?",
+    "trans": {
+      "jp": "朝食は何時ですか？",
+      "us": "What time is breakfast served?",
+      "cn": "请问早餐时间是几点？"
+    }
+  },
+  {
+    "id": 78,
+    "text": "석식 시간이 언제인가요?",
+    "trans": {
+      "jp": "夕食は何時ですか？",
+      "us": "What time is dinner served?",
+      "cn": "请问晚餐时间是几点？"
+    }
+  },
+  {
+    "id": 79,
+    "text": "애완동물 동반 가능한가요?",
+    "trans": {
+      "jp": "ペット同伴は可能ですか？",
+      "us": "Are pets allowed?",
+      "cn": "请问可以带宠物吗？"
+    }
+  },
+  {
+    "id": 80,
+    "text": "주변 관광지 추천해주세요.",
+    "trans": {
+      "jp": "周辺のおすすめ観光スポットを教えてください。",
+      "us": "Could you recommend some tourist attractions nearby?",
+      "cn": "请推荐一下附近的旅游景点。"
+    }
+  },
+  {
+    "id": 81,
+    "text": "방 온도 조절 어떻게 하나요?",
+    "trans": {
+      "jp": "部屋の温度調節はどうすればいいですか？",
+      "us": "How do I adjust the room temperature?",
+      "cn": "请问怎么调节房间温度？"
+    }
+  },
+  {
+    "id": 82,
+    "text": "방에 헤어드라이기 있나요?",
+    "trans": {
+      "jp": "部屋にヘアドライヤーはありますか？",
+      "us": "Is there a hair dryer in the room?",
+      "cn": "请问房间里有吹风机吗？"
+    }
+  },
+  {
+    "id": 83,
+    "text": "방에 금고 있나요?",
+    "trans": {
+      "jp": "部屋に金庫はありますか？",
+      "us": "Is there a safe in the room?",
+      "cn": "请问房间里有保险箱吗？"
+    }
+  },
+  {
+    "id": 84,
+    "text": "체크인 시간은 언제인가요?",
+    "trans": {
+      "jp": "チェックインは何時ですか？",
+      "us": "What time is check-in?",
+      "cn": "请问入住时间是几点？"
+    }
+  },
+  {
+    "id": 85,
+    "text": "밤 늦게 체크인 가능한가요?",
+    "trans": {
+      "jp": "夜遅くのチェックインは可能ですか？",
+      "us": "Is late check-in available?",
+      "cn": "请问可以深夜办理入住吗？"
+    }
+  },
+  {
+    "id": 86,
+    "text": "예약했어요.",
+    "trans": {
+      "jp": "予約しています。",
+      "us": "I have a reservation.",
+      "cn": "我预订了。"
+    }
+  },
+  {
+    "id": 87,
+    "text": "메뉴판 보여주세요.",
+    "trans": {
+      "jp": "メニューを見せていただけますか？",
+      "us": "Could I see the menu, please?",
+      "cn": "请给我看一下菜单。"
+    }
+  },
+  {
+    "id": 88,
+    "text": "추천 메뉴 뭐예요?",
+    "trans": {
+      "jp": "おすすめのメニューは何ですか？",
+      "us": "What would you recommend?",
+      "cn": "请问有什么推荐菜？"
+    }
+  },
+  {
+    "id": 89,
+    "text": "채식 메뉴 있나요?",
+    "trans": {
+      "jp": "ベジタリアンメニューはありますか？",
+      "us": "Do you have any vegetarian options?",
+      "cn": "请问有素食菜单吗？"
+    }
+  },
+  {
+    "id": 90,
+    "text": "알레르기 때문에 재료 확인하고 싶어요.",
+    "trans": {
+      "jp": "アレルギーがあるので、材料を確認したいのですが。",
+      "us": "I need to check the ingredients due to an allergy.",
+      "cn": "我有过敏，想确认一下食材。"
+    }
+  },
+  {
+    "id": 91,
+    "text": "물 주세요.",
+    "trans": {
+      "jp": "お水をお願いします。",
+      "us": "Could I have some water, please?",
+      "cn": "请给我一杯水。"
+    }
+  },
+  {
+    "id": 92,
+    "text": "계산서 주세요.",
+    "trans": {
+      "jp": "お勘定をお願いします。",
+      "us": "Could I have the check, please?",
+      "cn": "买单。"
+    }
+  },
+  {
+    "id": 93,
+    "text": "카드로 결제할게요.",
+    "trans": {
+      "jp": "カードで支払います。",
+      "us": "I will pay by card.",
+      "cn": "我刷卡。"
+    }
+  },
+  {
+    "id": 94,
+    "text": "현금으로 결제할게요.",
+    "trans": {
+      "jp": "現金で支払います。",
+      "us": "I will pay in cash.",
+      "cn": "我付现金。"
+    }
+  },
+  {
+    "id": 95,
+    "text": "영수증 주세요.",
+    "trans": {
+      "jp": "レシートをください。",
+      "us": "Could I have a receipt, please?",
+      "cn": "请给我收据。"
+    }
+  },
+  {
+    "id": 96,
+    "text": "팁은 얼마 줘야 하나요?",
+    "trans": {
+      "jp": "チップはいくら渡せばいいですか？",
+      "us": "How much should I tip?",
+      "cn": "请问小费给多少合适？"
+    }
+  },
+  {
+    "id": 97,
+    "text": "자리 좀 바꿀 수 있을까요?",
+    "trans": {
+      "jp": "席を変えていただけますか？",
+      "us": "Would it be possible to move to a different table?",
+      "cn": "可以换个座位吗？"
+    }
+  },
+  {
+    "id": 98,
+    "text": "포장 가능할까요?",
+    "trans": {
+      "jp": "持ち帰りにできますか？",
+      "us": "Could I get this to go?",
+      "cn": "可以打包吗？"
+    }
+  },
+  {
+    "id": 99,
+    "text": "매운 음식 없나요?",
+    "trans": {
+      "jp": "辛い料理はありますか？",
+      "us": "Do you have any spicy dishes?",
+      "cn": "没有辣的菜吗？"
+    }
+  },
+  {
+    "id": 100,
+    "text": "주문 취소할 수 있나요?",
+    "trans": {
+      "jp": "注文をキャンセルできますか？",
+      "us": "Is it possible to cancel my order?",
+      "cn": "可以取消订单吗？"
+    }
+  },
+  {
+    "id": 101,
+    "text": "어린이용 의자 있나요?",
+    "trans": {
+      "jp": "子供用の椅子はありますか？",
+      "us": "Do you have a high chair?",
+      "cn": "有儿童椅吗？"
+    }
+  },
+  {
+    "id": 102,
+    "text": "와인 리스트 보여주세요.",
+    "trans": {
+      "jp": "ワインリストを見せていただけますか？",
+      "us": "Could I see the wine list, please?",
+      "cn": "请给我看一下酒单。"
+    }
+  },
+  {
+    "id": 103,
+    "text": "냅킨 좀 더 주세요.",
+    "trans": {
+      "jp": "ナプキンをもう少しいただけますか？",
+      "us": "Could I have some extra napkins?",
+      "cn": "请再给我一些纸巾。"
+    }
+  },
+  {
+    "id": 104,
+    "text": "포크, 나이프 좀 주세요.",
+    "trans": {
+      "jp": "フォークとナイフをいただけますか？",
+      "us": "Could I get a fork and knife, please?",
+      "cn": "请给我刀叉。"
+    }
+  },
+  {
+    "id": 105,
+    "text": "소스 따로 주세요.",
+    "trans": {
+      "jp": "ソースは別添えにできますか？",
+      "us": "Could I get the sauce on the side?",
+      "cn": "酱料请分开放。"
+    }
+  },
+  {
+    "id": 106,
+    "text": "너무 짜요.",
+    "trans": {
+      "jp": "塩辛すぎます。",
+      "us": "This is a bit too salty.",
+      "cn": "太咸了。"
+    }
+  },
+  {
+    "id": 107,
+    "text": "차가워요.",
+    "trans": {
+      "jp": "冷たいです。",
+      "us": "This is cold.",
+      "cn": "菜凉了。"
+    }
+  },
+  {
+    "id": 108,
+    "text": "덜 익었어요.",
+    "trans": {
+      "jp": "中まで火が通っていません。",
+      "us": "This is undercooked.",
+      "cn": "没熟。"
+    }
+  },
+  {
+    "id": 109,
+    "text": "주문한 음식이 아직 안 나왔어요.",
+    "trans": {
+      "jp": "注文した料理がまだ来ません。",
+      "us": "My order has not arrived yet.",
+      "cn": "我点的菜还没上。"
+    }
+  },
+  {
+    "id": 110,
+    "text": "음식 언제 나오나요?",
+    "trans": {
+      "jp": "料理はいつ頃出ますか？",
+      "us": "When will our food be served?",
+      "cn": "菜什么时候上？"
+    }
+  },
+  {
+    "id": 111,
+    "text": "양이 많아요.",
+    "trans": {
+      "jp": "量が多いです。",
+      "us": "The portion is quite large.",
+      "cn": "分量很大。"
+    }
+  },
+  {
+    "id": 112,
+    "text": "따뜻하게 데워 주세요.",
+    "trans": {
+      "jp": "温めていただけますか？",
+      "us": "Could you heat this up for me?",
+      "cn": "请帮我热一下。"
+    }
+  },
+  {
+    "id": 113,
+    "text": "단체석 있나요?",
+    "trans": {
+      "jp": "団体席はありますか？",
+      "us": "Do you have seating for a group?",
+      "cn": "有团体座位吗？"
+    }
+  },
+  {
+    "id": 114,
+    "text": "음료 리필 가능할까요?",
+    "trans": {
+      "jp": "飲み物のおかわりはできますか？",
+      "us": "Can I get a refill?",
+      "cn": "饮料可以续杯吗？"
+    }
+  },
+  {
+    "id": 115,
+    "text": "오늘 특별 메뉴 뭐예요?",
+    "trans": {
+      "jp": "今日のスペシャルメニューは何ですか？",
+      "us": "What is today's special?",
+      "cn": "今天的特色菜是什么？"
+    }
+  },
+  {
+    "id": 116,
+    "text": "화장실 어디인가요?",
+    "trans": {
+      "jp": "トイレはどこですか？",
+      "us": "Where is the restroom?",
+      "cn": "请问洗手间在哪里？"
+    }
+  },
+  {
+    "id": 117,
+    "text": "사진 찍어도 되나요?",
+    "trans": {
+      "jp": "写真を撮ってもいいですか？",
+      "us": "Is it okay to take a photo?",
+      "cn": "可以拍照吗？"
+    }
+  },
+  {
+    "id": 118,
+    "text": "영업 시간은 언제인가요?",
+    "trans": {
+      "jp": "営業時間は何時ですか？",
+      "us": "What are your opening hours?",
+      "cn": "请问营业时间是几点？"
+    }
+  },
+  {
+    "id": 119,
+    "text": "이 장소까지 어떻게 가나요?",
+    "trans": {
+      "jp": "この場所へはどう行けばいいですか？",
+      "us": "How do I get to this location?",
+      "cn": "请问去这里怎么走？"
+    }
+  },
+  {
+    "id": 120,
+    "text": "지도 좀 보여주세요.",
+    "trans": {
+      "jp": "地図を見せていただけますか？",
+      "us": "Could you show me on the map?",
+      "cn": "请给我看一下地图。"
+    }
+  },
+  {
+    "id": 121,
+    "text": "가장 가까운 지하철역 어디인가요?",
+    "trans": {
+      "jp": "最寄りの地下鉄の駅はどこですか？",
+      "us": "Where is the nearest subway station?",
+      "cn": "请问最近的地铁站在哪里？"
+    }
+  },
+  {
+    "id": 122,
+    "text": "버스 정류장 어디인가요?",
+    "trans": {
+      "jp": "バス停はどこですか？",
+      "us": "Where is the bus stop?",
+      "cn": "请问公交车站在哪里？"
+    }
+  },
+  {
+    "id": 123,
+    "text": "여기에서 도보로 얼마나 걸리나요?",
+    "trans": {
+      "jp": "ここから徒歩でどれくらいかかりますか？",
+      "us": "How long is the walk from here?",
+      "cn": "从这里走路要多久？"
+    }
+  },
+  {
+    "id": 124,
+    "text": "입장료 얼마예요?",
+    "trans": {
+      "jp": "入場料はいくらですか？",
+      "us": "How much is the admission fee?",
+      "cn": "门票多少钱？"
+    }
+  },
+  {
+    "id": 125,
+    "text": "할인 되나요?",
+    "trans": {
+      "jp": "割引はありますか？",
+      "us": "Do you offer any discounts?",
+      "cn": "有优惠吗？"
+    }
+  },
+  {
+    "id": 126,
+    "text": "오디오 가이드 있나요?",
+    "trans": {
+      "jp": "音声ガイドはありますか？",
+      "us": "Do you have an audio guide?",
+      "cn": "有语音导览吗？"
+    }
+  },
+  {
+    "id": 127,
+    "text": "가이드 투어 예약하고 싶어요.",
+    "trans": {
+      "jp": "ガイドツアーを予約したいのですが。",
+      "us": "I would like to book a guided tour.",
+      "cn": "我想预约导览服务。"
+    }
+  },
+  {
+    "id": 128,
+    "text": "오늘 운영 시간 언제까지인가요?",
+    "trans": {
+      "jp": "今日の営業時間は何時までですか？",
+      "us": "What time are you open until today?",
+      "cn": "今天营业到几点？"
+    }
+  },
+  {
+    "id": 129,
+    "text": "내일도 오픈하나요?",
+    "trans": {
+      "jp": "明日も営業していますか？",
+      "us": "Are you open tomorrow?",
+      "cn": "明天也开门吗？"
+    }
+  },
+  {
+    "id": 130,
+    "text": "휴관일 언제인가요?",
+    "trans": {
+      "jp": "休館日はいつですか？",
+      "us": "What days are you closed?",
+      "cn": "请问哪天闭馆？"
+    }
+  },
+  {
+    "id": 131,
+    "text": "안내 책자 있나요?",
+    "trans": {
+      "jp": "パンフレットはありますか？",
+      "us": "Do you have a brochure?",
+      "cn": "有宣传册吗？"
+    }
+  },
+  {
+    "id": 132,
+    "text": "기념품 가게 어디인가요?",
+    "trans": {
+      "jp": "お土産屋さんはどこですか？",
+      "us": "Where is the souvenir shop?",
+      "cn": "请问纪念品商店在哪里？"
+    }
+  },
+  {
+    "id": 133,
+    "text": "가장 인기 있는 명소가 어디인가요?",
+    "trans": {
+      "jp": "一番人気の観光スポットはどこですか？",
+      "us": "What is the most popular attraction?",
+      "cn": "最有人气的景点是哪里？"
+    }
+  },
+  {
+    "id": 134,
+    "text": "길을 잃었어요.",
+    "trans": {
+      "jp": "道に迷いました。",
+      "us": "I am lost.",
+      "cn": "我迷路了。"
+    }
+  },
+  {
+    "id": 135,
+    "text": "GPS가 안 돼요.",
+    "trans": {
+      "jp": "GPSが動きません。",
+      "us": "My GPS is not working.",
+      "cn": "导航用不了。"
+    }
+  },
+  {
+    "id": 136,
+    "text": "자전거 대여 가능한가요?",
+    "trans": {
+      "jp": "レンタサイクルはありますか？",
+      "us": "Is it possible to rent a bicycle?",
+      "cn": "可以租自行车吗？"
+    }
+  },
+  {
+    "id": 137,
+    "text": "야경 보기 좋은 장소 어디인가요?",
+    "trans": {
+      "jp": "夜景が綺麗な場所はどこですか？",
+      "us": "Where is a good spot to see the night view?",
+      "cn": "哪里看夜景比较好？"
+    }
+  },
+  {
+    "id": 138,
+    "text": "추천 사진 포인트 알려주세요.",
+    "trans": {
+      "jp": "おすすめの撮影スポットを教えてください。",
+      "us": "Could you recommend a good photo spot?",
+      "cn": "请推荐一下拍照好看的地方。"
+    }
+  },
+  {
+    "id": 139,
+    "text": "혼잡한 시간대는 언제인가요?",
+    "trans": {
+      "jp": "混雑する時間帯はいつですか？",
+      "us": "When is the busiest time?",
+      "cn": "什么时候人最多？"
+    }
+  },
+  {
+    "id": 140,
+    "text": "관광객 많나요?",
+    "trans": {
+      "jp": "観光客は多いですか？",
+      "us": "Is it crowded with tourists?",
+      "cn": "游客多吗？"
+    }
+  },
+  {
+    "id": 141,
+    "text": "이거 얼마예요?",
+    "trans": {
+      "jp": "これはいくらですか？",
+      "us": "How much is this?",
+      "cn": "这个多少钱？"
+    }
+  },
+  {
+    "id": 142,
+    "text": "세금 환급 가능한가요?",
+    "trans": {
+      "jp": "免税手続きはできますか？",
+      "us": "Can I get a tax refund?",
+      "cn": "可以退税吗？"
+    }
+  },
+  {
+    "id": 143,
+    "text": "더 저렴하게 해줄 수 있나요?",
+    "trans": {
+      "jp": "もう少し安くしていただけませんか？",
+      "us": "Could you give me a better price?",
+      "cn": "可以便宜点吗？"
+    }
+  },
+  {
+    "id": 144,
+    "text": "다른 색상 있나요?",
+    "trans": {
+      "jp": "色違いはありますか？",
+      "us": "Do you have this in a different color?",
+      "cn": "有别的颜色吗？"
+    }
+  },
+  {
+    "id": 145,
+    "text": "다른 사이즈 있나요?",
+    "trans": {
+      "jp": "サイズ違いはありますか？",
+      "us": "Do you have this in a different size?",
+      "cn": "有别的尺码吗？"
+    }
+  },
+  {
+    "id": 146,
+    "text": "포장해 주세요.",
+    "trans": {
+      "jp": "包んでいただけますか？",
+      "us": "Could you wrap this up, please?",
+      "cn": "请帮我包起来。"
+    }
+  },
+  {
+    "id": 147,
+    "text": "선물용 포장 가능할까요?",
+    "trans": {
+      "jp": "プレゼント用にラッピングできますか？",
+      "us": "Do you offer gift wrapping?",
+      "cn": "可以包装成礼物吗？"
+    }
+  },
+  {
+    "id": 148,
+    "text": "환불 가능해요?",
+    "trans": {
+      "jp": "返品はできますか？",
+      "us": "Is it possible to get a refund?",
+      "cn": "可以退款吗？"
+    }
+  },
+  {
+    "id": 149,
+    "text": "교환 가능해요?",
+    "trans": {
+      "jp": "交換はできますか？",
+      "us": "Is it possible to exchange this?",
+      "cn": "可以换货吗？"
+    }
+  },
+  {
+    "id": 150,
+    "text": "세일 언제까지인가요?",
+    "trans": {
+      "jp": "セールはいつまでですか？",
+      "us": "When does the sale end?",
+      "cn": "打折活动什么时候结束？"
+    }
+  },
+  {
+    "id": 151,
+    "text": "새 제품 있나요?",
+    "trans": {
+      "jp": "新しいものはありますか？",
+      "us": "Do you have a new one in stock?",
+      "cn": "有新的吗？"
+    }
+  },
+  {
+    "id": 152,
+    "text": "재고 있나요?",
+    "trans": {
+      "jp": "在庫はありますか？",
+      "us": "Is this in stock?",
+      "cn": "有货吗？"
+    }
+  },
+  {
+    "id": 153,
+    "text": "온라인으로 주문할 수 있나요?",
+    "trans": {
+      "jp": "オンラインで注文できますか？",
+      "us": "Can I order this online?",
+      "cn": "可以在网上买吗？"
+    }
+  },
+  {
+    "id": 154,
+    "text": "배송 가능할까요?",
+    "trans": {
+      "jp": "配送は可能ですか？",
+      "us": "Do you offer delivery?",
+      "cn": "可以邮寄吗？"
+    }
+  },
+  {
+    "id": 155,
+    "text": "무료 배송 되나요?",
+    "trans": {
+      "jp": "送料無料になりますか？",
+      "us": "Is shipping free?",
+      "cn": "包邮吗？"
+    }
+  },
+  {
+    "id": 156,
+    "text": "사은품 있나요?",
+    "trans": {
+      "jp": "おまけはありますか？",
+      "us": "Does this come with a free gift?",
+      "cn": "有赠品吗？"
+    }
+  },
+  {
+    "id": 157,
+    "text": "시식 가능할까요?",
+    "trans": {
+      "jp": "試食はできますか？",
+      "us": "Can I try a sample?",
+      "cn": "可以试吃吗？"
+    }
+  },
+  {
+    "id": 158,
+    "text": "쇼핑백 필요 없어요.",
+    "trans": {
+      "jp": "袋はいりません。",
+      "us": "I don't need a bag.",
+      "cn": "不需要购物袋。"
+    }
+  },
+  {
+    "id": 159,
+    "text": "카드 포인트 적립 되나요?",
+    "trans": {
+      "jp": "ポイントはつきますか？",
+      "us": "Can I earn points on my card?",
+      "cn": "可以积积分吗？"
+    }
+  },
+  {
+    "id": 160,
+    "text": "병원 가고 싶어요.",
+    "trans": {
+      "jp": "病院へ行きたいのですが。",
+      "us": "I need to see a doctor.",
+      "cn": "我想去医院。"
+    }
+  },
+  {
+    "id": 161,
+    "text": "진료 예약 해야 하나요?",
+    "trans": {
+      "jp": "予約が必要ですか？",
+      "us": "Do I need to make an appointment?",
+      "cn": "需要预约吗？"
+    }
+  },
+  {
+    "id": 162,
+    "text": "진통제 있나요?",
+    "trans": {
+      "jp": "痛み止めはありますか？",
+      "us": "Do you have any painkillers?",
+      "cn": "有止痛药吗？"
+    }
+  },
+  {
+    "id": 163,
+    "text": "약국 어디인가요?",
+    "trans": {
+      "jp": "薬局はどこですか？",
+      "us": "Where is the pharmacy?",
+      "cn": "请问药店在哪里？"
+    }
+  },
+  {
+    "id": 164,
+    "text": "처방전 필요해요?",
+    "trans": {
+      "jp": "処方箋は必要ですか？",
+      "us": "Do I need a prescription?",
+      "cn": "需要处方吗？"
+    }
+  },
+  {
+    "id": 165,
+    "text": "약 추천해 주세요.",
+    "trans": {
+      "jp": "おすすめの薬を教えてください。",
+      "us": "Could you recommend some medicine?",
+      "cn": "请推荐一种药。"
+    }
+  },
+  {
+    "id": 166,
+    "text": "두통이 있어요.",
+    "trans": {
+      "jp": "頭痛がします。",
+      "us": "I have a headache.",
+      "cn": "我头痛。"
+    }
+  },
+  {
+    "id": 167,
+    "text": "배가 아파요.",
+    "trans": {
+      "jp": "お腹が痛いです。",
+      "us": "I have a stomachache.",
+      "cn": "我肚子疼。"
+    }
+  },
+  {
+    "id": 168,
+    "text": "알레르기 있어요.",
+    "trans": {
+      "jp": "アレルギーがあります。",
+      "us": "I have allergies.",
+      "cn": "我过敏。"
+    }
+  },
+  {
+    "id": 169,
+    "text": "감기 기운 있어요.",
+    "trans": {
+      "jp": "風邪気味です。",
+      "us": "I feel like I am catching a cold.",
+      "cn": "我好像感冒了。"
+    }
+  },
+  {
+    "id": 170,
+    "text": "열이 나요.",
+    "trans": {
+      "jp": "熱があります。",
+      "us": "I have a fever.",
+      "cn": "我发烧了。"
+    }
+  },
+  {
+    "id": 171,
+    "text": "기침이 심해요.",
+    "trans": {
+      "jp": "咳がひどいです。",
+      "us": "I have a bad cough.",
+      "cn": "咳嗽很厉害。"
+    }
+  },
+  {
+    "id": 172,
+    "text": "목이 아파요.",
+    "trans": {
+      "jp": "喉が痛いです。",
+      "us": "I have a sore throat.",
+      "cn": "嗓子疼。"
+    }
+  },
+  {
+    "id": 173,
+    "text": "코가 막혀요.",
+    "trans": {
+      "jp": "鼻が詰まっています。",
+      "us": "I have a stuffy nose.",
+      "cn": "鼻子堵了。"
+    }
+  },
+  {
+    "id": 174,
+    "text": "구토했어요.",
+    "trans": {
+      "jp": "吐きました。",
+      "us": "I have been vomiting.",
+      "cn": "我吐了。"
+    }
+  },
+  {
+    "id": 175,
+    "text": "설사해요.",
+    "trans": {
+      "jp": "下痢をしています。",
+      "us": "I have diarrhea.",
+      "cn": "我拉肚子。"
+    }
+  },
+  {
+    "id": 176,
+    "text": "상처가 있어요.",
+    "trans": {
+      "jp": "傷があります。",
+      "us": "I have a wound.",
+      "cn": "有伤口。"
+    }
+  },
+  {
+    "id": 177,
+    "text": "붓기가 있어요.",
+    "trans": {
+      "jp": "腫れています。",
+      "us": "It is swollen.",
+      "cn": "肿了。"
+    }
+  },
+  {
+    "id": 178,
+    "text": "응급실 어디인가요?",
+    "trans": {
+      "jp": "救急外来はどこですか？",
+      "us": "Where is the emergency room?",
+      "cn": "请问急诊在哪里？"
+    }
+  },
+  {
+    "id": 179,
+    "text": "검사 결과 언제 나오나요?",
+    "trans": {
+      "jp": "検査結果はいつ出ますか？",
+      "us": "When will the test results be ready?",
+      "cn": "检查结果什么时候出来？"
+    }
+  },
+  {
+    "id": 180,
+    "text": "입원해야 하나요?",
+    "trans": {
+      "jp": "入院が必要ですか？",
+      "us": "Do I need to be hospitalized?",
+      "cn": "需要住院吗？"
+    }
+  },
+  {
+    "id": 181,
+    "text": "수술 필요해요?",
+    "trans": {
+      "jp": "手術が必要ですか？",
+      "us": "Do I need surgery?",
+      "cn": "需要做手术吗？"
+    }
+  },
+  {
+    "id": 182,
+    "text": "응급 상황이에요!",
+    "trans": {
+      "jp": "緊急事態です！",
+      "us": "This is an emergency!",
+      "cn": "是紧急情况！"
+    }
+  },
+  {
+    "id": 183,
+    "text": "약 복용법 알려주세요.",
+    "trans": {
+      "jp": "薬の飲み方を教えてください。",
+      "us": "Could you tell me how to take this medicine?",
+      "cn": "请告诉我这药怎么吃。"
+    }
+  },
+  {
+    "id": 184,
+    "text": "부작용 있나요?",
+    "trans": {
+      "jp": "副作用はありますか？",
+      "us": "Are there any side effects?",
+      "cn": "有副作用吗？"
+    }
+  },
+  {
+    "id": 185,
+    "text": "보험 적용되나요?",
+    "trans": {
+      "jp": "保険は適用されますか？",
+      "us": "Is this covered by insurance?",
+      "cn": "可以用保险吗？"
+    }
+  },
+  {
+    "id": 186,
+    "text": "어린이 약 있나요?",
+    "trans": {
+      "jp": "子供用の薬はありますか？",
+      "us": "Do you have medicine for children?",
+      "cn": "有儿童药吗？"
+    }
+  },
+  {
+    "id": 187,
+    "text": "경찰서 어디인가요?",
+    "trans": {
+      "jp": "警察署はどこですか？",
+      "us": "Where is the police station?",
+      "cn": "请问派出所在哪里？"
+    }
+  },
+  {
+    "id": 188,
+    "text": "도둑 맞았어요.",
+    "trans": {
+      "jp": "盗難に遭いました。",
+      "us": "I have been robbed.",
+      "cn": "我东西被偷了。"
+    }
+  },
+  {
+    "id": 189,
+    "text": "여권 분실했어요.",
+    "trans": {
+      "jp": "パスポートをなくしました。",
+      "us": "I lost my passport.",
+      "cn": "我的护照丢了。"
+    }
+  },
+  {
+    "id": 190,
+    "text": "연락처 좀 알려주세요.",
+    "trans": {
+      "jp": "連絡先を教えていただけますか？",
+      "us": "Could I have a contact number?",
+      "cn": "请留个联系方式。"
+    }
+  },
+  {
+    "id": 191,
+    "text": "화재 발생했어요.",
+    "trans": {
+      "jp": "火事です！",
+      "us": "There is a fire.",
+      "cn": "着火了！"
+    }
+  },
+  {
+    "id": 192,
+    "text": "구조 요청하고 싶어요.",
+    "trans": {
+      "jp": "救助をお願いします。",
+      "us": "I need to call for rescue.",
+      "cn": "我需要救援。"
+    }
+  },
+  {
+    "id": 193,
+    "text": "대사관 어디 있나요?",
+    "trans": {
+      "jp": "大使館はどこですか？",
+      "us": "Where is the embassy?",
+      "cn": "请问大使馆在哪里？"
+    }
+  },
+  {
+    "id": 194,
+    "text": "사고가 났어요.",
+    "trans": {
+      "jp": "事故に遭いました。",
+      "us": "There has been an accident.",
+      "cn": "出事故了。"
+    }
+  },
+  {
+    "id": 195,
+    "text": "지갑이 없어졌어요.",
+    "trans": {
+      "jp": "財布がなくなりました。",
+      "us": "My wallet is missing.",
+      "cn": "我的钱包不见了。"
+    }
+  },
+  {
+    "id": 196,
+    "text": "소매치기 당했어요.",
+    "trans": {
+      "jp": "スリに遭いました。",
+      "us": "I have been pickpocketed.",
+      "cn": "我遇上扒手了。"
+    }
+  },
+  {
+    "id": 197,
+    "text": "주변 CCTV 있나요?",
+    "trans": {
+      "jp": "近くに防犯カメラはありますか？",
+      "us": "Are there any security cameras nearby?",
+      "cn": "这附近有监控吗？"
+    }
+  },
+  {
+    "id": 198,
+    "text": "분실물 센터 어디인가요?",
+    "trans": {
+      "jp": "忘れ物センターはどこですか？",
+      "us": "Where is the lost and found?",
+      "cn": "请问失物招领处在哪里？"
+    }
+  },
+  {
+    "id": 199,
+    "text": "안전한 곳으로 안내해 주세요.",
+    "trans": {
+      "jp": "安全な場所へ案内してください。",
+      "us": "Please take me to a safe place.",
+      "cn": "请带我去安全的地方。"
+    }
+  },
+  {
+    "id": 200,
+    "text": "실종 신고 하고 싶어요.",
+    "trans": {
+      "jp": "行方不明の届け出をしたいのですが。",
+      "us": "I would like to report a missing person.",
+      "cn": "我想报失踪。"
+    }
+  },
+  {
+    "id": 201,
+    "text": "통역이 필요해요.",
+    "trans": {
+      "jp": "通訳をお願いします。",
+      "us": "I need an interpreter.",
+      "cn": "我需要翻译。"
+    }
+  },
+  {
+    "id": 202,
+    "text": "목적지까지 얼마나 걸리나요?",
+    "trans": {
+      "jp": "目的地までどれくらいかかりますか？",
+      "us": "How long does it take to get to the destination?",
+      "cn": "到目的地要多久？"
+    }
+  },
+  {
+    "id": 203,
+    "text": "환승 어떻게 하나요?",
+    "trans": {
+      "jp": "乗り換えはどうすればいいですか？",
+      "us": "How do I transfer?",
+      "cn": "请问怎么换乘？"
+    }
+  },
+  {
+    "id": 204,
+    "text": "시간표 확인하고 싶어요.",
+    "trans": {
+      "jp": "時刻表を確認したいのですが。",
+      "us": "I would like to check the schedule.",
+      "cn": "我想看一下时刻表。"
+    }
+  },
+  {
+    "id": 205,
+    "text": "다음 열차 언제 오나요?",
+    "trans": {
+      "jp": "次の電車はいつ来ますか？",
+      "us": "When is the next train coming?",
+      "cn": "下一班车什么时候来？"
+    }
+  },
+  {
+    "id": 206,
+    "text": "탑승권 발권 어디서 하나요?",
+    "trans": {
+      "jp": "乗車券はどこで発券できますか？",
+      "us": "Where can I get my ticket issued?",
+      "cn": "请问在哪里取票？"
+    }
+  },
+  {
+    "id": 207,
+    "text": "장애인 좌석 있나요?",
+    "trans": {
+      "jp": "車椅子用の席はありますか？",
+      "us": "Do you have accessible seating?",
+      "cn": "有爱心专座吗？"
+    }
+  },
+  {
+    "id": 208,
+    "text": "출발 시간 변경됐나요?",
+    "trans": {
+      "jp": "出発時間は変更になりましたか？",
+      "us": "Has the departure time changed?",
+      "cn": "出发时间变了吗？"
+    }
+  },
+  {
+    "id": 209,
+    "text": "유심 카드는 어디서 살 수 있나요?",
+    "trans": {
+      "jp": "SIMカードはどこで買えますか？",
+      "us": "Where can I buy a SIM card?",
+      "cn": "请问在哪里买手机卡？"
+    }
+  },
+  {
+    "id": 210,
+    "text": "시내까지 어떻게 가나요?",
+    "trans": {
+      "jp": "市内までどうやって行けばいいですか？",
+      "us": "How do I get to the city center?",
+      "cn": "请问去市区怎么走？"
+    }
+  },
+  {
+    "id": 211,
+    "text": "[ ]명 자리 있나요?",
+    "trans": {
+      "jp": "[ ]名ですが、席はありますか？",
+      "us": "Do you have a table for [ ] people?",
+      "cn": "请问有[ ]位的座位吗？"
+    }
+  },
+  {
+    "id": 212,
+    "text": "계산할게요.",
+    "trans": {
+      "jp": "お会計をお願いします。",
+      "us": "I would like to pay.",
+      "cn": "买单。"
+    }
+  },
+  {
+    "id": 213,
+    "text": "이거 입어봐도 되나요?",
+    "trans": {
+      "jp": "これ、試着してもいいですか？",
+      "us": "Can I try this on?",
+      "cn": "这个可以试穿吗？"
+    }
+  },
+  {
+    "id": 214,
+    "text": "사진 좀 찍어주실 수 있나요?",
+    "trans": {
+      "jp": "写真を撮っていただけますか？",
+      "us": "Could you take a photo for us, please?",
+      "cn": "能帮我拍张照吗？"
+    }
+  },
+  {
+    "id": 215,
+    "text": "SNS 공유해도 되나요?",
+    "trans": {
+      "jp": "SNSに載せてもいいですか？",
+      "us": "Is it okay if I post this on social media?",
+      "cn": "可以发到社交媒体上吗？"
+    }
+  },
+  {
+    "id": 216,
+    "text": "맛있어요.",
+    "trans": {
+      "jp": "美味しいです。",
+      "us": "This is delicious.",
+      "cn": "很好吃。"
+    }
+  },
+  {
+    "id": 217,
+    "text": "감사합니다.",
+    "trans": {
+      "jp": "ありがとうございます。",
+      "us": "Thank you.",
+      "cn": "谢谢。"
+    }
+  },
+  {
+    "id": 218,
+    "text": "안녕하세요?",
+    "trans": {
+      "jp": "こんにちは。",
+      "us": "Hello.",
+      "cn": "您好。"
+    }
+  },
+  {
+    "id": 219,
+    "text": "죄송합니다.",
+    "trans": {
+      "jp": "すみません。",
+      "us": "I am sorry.",
+      "cn": "对不起。"
+    }
+  },
+  {
+    "id": 220,
+    "text": "실례합니다.",
+    "trans": {
+      "jp": "失礼します。",
+      "us": "Excuse me.",
+      "cn": "打扰一下。"
+    }
+  },
+  {
+    "id": 221,
+    "text": "도와주세요!",
+    "trans": {
+      "jp": "助けてください！",
+      "us": "Could you help me, please?",
+      "cn": "请帮帮我！"
+    }
+  },
+  {
+    "id": 222,
+    "text": "잘 부탁 드립니다.",
+    "trans": {
+      "jp": "よろしくお願いします。",
+      "us": "Nice to meet you.",
+      "cn": "请多关照。"
+    }
+  },
+  {
+    "id": 223,
+    "text": "축하합니다.",
+    "trans": {
+      "jp": "おめでとうございます。",
+      "us": "Congratulations.",
+      "cn": "恭喜。"
+    }
+  },
+  {
+    "id": 224,
+    "text": "잘 먹었습니다.",
+    "trans": {
+      "jp": "ごちそうさまでした。",
+      "us": "Thank you for the meal.",
+      "cn": "多谢款待。"
+    }
+  },
+  {
+    "id": 225,
+    "text": "잘 먹겠습니다.",
+    "trans": {
+      "jp": "いただきます。",
+      "us": "Thank you for the food.",
+      "cn": "那我开动了。"
+    }
+  },
+  {
+    "id": 226,
+    "text": "안녕히 계세요.",
+    "trans": {
+      "jp": "さようなら。",
+      "us": "Goodbye.",
+      "cn": "再见。"
+    }
+  },
+  {
+    "id": 227,
+    "text": "버스 요금 얼마예요?",
+    "trans": {
+      "jp": "バスの運賃はいくらですか？",
+      "us": "How much is the bus fare?",
+      "cn": "请问公交车费是多少？"
+    }
+  },
+  {
+    "id": 228,
+    "text": "지하철 노선도 있나요?",
+    "trans": {
+      "jp": "地下鉄の路線図はありますか？",
+      "us": "Do you have a subway map?",
+      "cn": "请问有地铁线路图吗？"
+    }
+  },
+  {
+    "id": 229,
+    "text": "여기서 내릴게요.",
+    "trans": {
+      "jp": "ここで降ります。",
+      "us": "I would like to get off here, please.",
+      "cn": "我在这里下车。"
+    }
+  },
+  {
+    "id": 230,
+    "text": "막차 시간 언제인가요?",
+    "trans": {
+      "jp": "終電は何時ですか？",
+      "us": "When is the last train or bus?",
+      "cn": "请问末班车是几点？"
+    }
+  },
+  {
+    "id": 231,
+    "text": "피곤해요.",
+    "trans": {
+      "jp": "疲れました。",
+      "us": "I am tired.",
+      "cn": "我好累。"
+    }
+  },
+  {
+    "id": 232,
+    "text": "충전 좀 해주세요.",
+    "trans": {
+      "jp": "充電していただけますか？",
+      "us": "Could you charge this for me, please?",
+      "cn": "能帮我充一下电吗？"
+    }
+  },
+  {
+    "id": 233,
+    "text": "조용히 해주세요.",
+    "trans": {
+      "jp": "静かにしていただけますか？",
+      "us": "Could you please be quiet?",
+      "cn": "请安静一下。"
+    }
+  },
+  {
+    "id": 234,
+    "text": "여기 앉아도 되나요?",
+    "trans": {
+      "jp": "ここに座ってもいいですか？",
+      "us": "May I sit here?",
+      "cn": "请问我可以坐这里吗？"
+    }
+  },
+  {
+    "id": 235,
+    "text": "날씨 좋네요.",
+    "trans": {
+      "jp": "いい天気ですね。",
+      "us": "The weather is nice.",
+      "cn": "天气真好。"
+    }
+  },
+  {
+    "id": 236,
+    "text": "오늘 날씨 어떤가요?",
+    "trans": {
+      "jp": "今日の天気はどうですか？",
+      "us": "What is the weather like today?",
+      "cn": "今天天气怎么样？"
+    }
+  },
+  {
+    "id": 237,
+    "text": "집에 가고 싶어요.",
+    "trans": {
+      "jp": "家に帰りたいです。",
+      "us": "I want to go home.",
+      "cn": "我想回家。"
+    }
+  },
+  {
+    "id": 238,
+    "text": "더워요.",
+    "trans": {
+      "jp": "暑いです。",
+      "us": "It is hot.",
+      "cn": "好热。"
+    }
+  },
+  {
+    "id": 239,
+    "text": "추워요.",
+    "trans": {
+      "jp": "寒いです。",
+      "us": "It is cold.",
+      "cn": "好冷。"
+    }
+  },
+  {
+    "id": 240,
+    "text": "배고파요.",
+    "trans": {
+      "jp": "お腹が空きました。",
+      "us": "I am hungry.",
+      "cn": "我饿了。"
+    }
+  },
+  {
+    "id": 241,
+    "text": "목말라요.",
+    "trans": {
+      "jp": "喉が渇きました。",
+      "us": "I am thirsty.",
+      "cn": "我口渴了。"
+    }
+  },
+  {
+    "id": 242,
+    "text": "영어 할 줄 아세요?",
+    "trans": {
+      "jp": "英語は話せますか？",
+      "us": "Do you speak English?",
+      "cn": "你会说英语吗？"
+    }
+  },
+  {
+    "id": 243,
+    "text": "한국어 할 줄 아세요?",
+    "trans": {
+      "jp": "韓国語は話せますか？",
+      "us": "Do you speak Korean?",
+      "cn": "你会说韩语吗？"
+    }
+  },
+  {
+    "id": 244,
+    "text": "한국에서 왔어요.",
+    "trans": {
+      "jp": "韓国から来ました。",
+      "us": "I am from Korea.",
+      "cn": "我来自韩国。"
+    }
+  },
+  {
+    "id": 245,
+    "text": "몇 시에요?",
+    "trans": {
+      "jp": "今、何時ですか？",
+      "us": "What time is it?",
+      "cn": "现在几点了？"
+    }
+  },
+  {
+    "id": 246,
+    "text": "조금 늦을 것 같아요.",
+    "trans": {
+      "jp": "少し遅れそうです。",
+      "us": "I think I might be a little late.",
+      "cn": "我可能会晚一点到。"
+    }
+  },
+  {
+    "id": 247,
+    "text": "길이 너무 막히네요.",
+    "trans": {
+      "jp": "道がすごく混んでいます。",
+      "us": "The traffic is really bad.",
+      "cn": "路上太堵了。"
+    }
+  },
+  {
+    "id": 248,
+    "text": "지금 출발할게요.",
+    "trans": {
+      "jp": "今、出発します。",
+      "us": "I am leaving now.",
+      "cn": "我现在出发。"
+    }
+  },
+  {
+    "id": 249,
+    "text": "잠시 기다려주세요.",
+    "trans": {
+      "jp": "少々お待ちください。",
+      "us": "Just a moment, please.",
+      "cn": "请稍等。"
+    }
+  },
+  {
+    "id": 250,
+    "text": "쉬고싶어요.",
+    "trans": {
+      "jp": "休みたいです。",
+      "us": "I would like to get some rest.",
+      "cn": "我想休息一下。"
+    }
+  },
+  {
+    "id": 251,
+    "text": "방금 생각났어요.",
+    "trans": {
+      "jp": "今、思い出しました。",
+      "us": "I just remembered.",
+      "cn": "我刚想起来。"
+    }
+  },
+  {
+    "id": 252,
+    "text": "까먹었어요.",
+    "trans": {
+      "jp": "忘れました。",
+      "us": "I forgot.",
+      "cn": "我忘了。"
+    }
+  },
+  {
+    "id": 253,
+    "text": "괜찮아요.",
+    "trans": {
+      "jp": "大丈夫です。",
+      "us": "It is okay.",
+      "cn": "没关系。"
+    }
+  },
+  {
+    "id": 254,
+    "text": "신경 쓰지 마세요.",
+    "trans": {
+      "jp": "気にしないでください。",
+      "us": "Don't worry about it.",
+      "cn": "不用在意。"
+    }
+  },
+  {
+    "id": 255,
+    "text": "천천히 하세요.",
+    "trans": {
+      "jp": "ゆっくりでいいですよ。",
+      "us": "Take your time.",
+      "cn": "慢慢来。"
+    }
+  },
+  {
+    "id": 256,
+    "text": "다시 한 번 말해주세요.",
+    "trans": {
+      "jp": "もう一度言っていただけますか？",
+      "us": "Could you say that again, please?",
+      "cn": "请再说一遍。"
+    }
+  },
+  {
+    "id": 257,
+    "text": "이해가 안 돼요.",
+    "trans": {
+      "jp": "わかりません。",
+      "us": "I don't understand.",
+      "cn": "我没听懂。"
+    }
+  },
+  {
+    "id": 258,
+    "text": "천천히 말해주세요.",
+    "trans": {
+      "jp": "ゆっくり話していただけますか？",
+      "us": "Could you speak a little slower, please?",
+      "cn": "请慢点说。"
+    }
+  },
+  {
+    "id": 259,
+    "text": "무슨 뜻이에요?",
+    "trans": {
+      "jp": "どういう意味ですか？",
+      "us": "What does that mean?",
+      "cn": "是什么意思？"
+    }
+  },
+  {
+    "id": 260,
+    "text": "어떻게 발음하나요?",
+    "trans": {
+      "jp": "どうやって発音しますか？",
+      "us": "How do you pronounce this?",
+      "cn": "这个怎么发音？"
+    }
+  },
+  {
+    "id": 261,
+    "text": "몇 층이에요?",
+    "trans": {
+      "jp": "何階ですか？",
+      "us": "What floor is it?",
+      "cn": "在几楼？"
+    }
+  },
+  {
+    "id": 262,
+    "text": "재미있어요.",
+    "trans": {
+      "jp": "楽しいです。",
+      "us": "This is fun.",
+      "cn": "很有意思。"
+    }
+  },
+  {
+    "id": 263,
+    "text": "심심해요.",
+    "trans": {
+      "jp": "暇です。",
+      "us": "I am bored.",
+      "cn": "我好无聊。"
+    }
+  },
+  {
+    "id": 264,
+    "text": "지루해요.",
+    "trans": {
+      "jp": "退屈です。",
+      "us": "This is boring.",
+      "cn": "很无聊。"
+    }
+  },
+  {
+    "id": 265,
+    "text": "행복해요.",
+    "trans": {
+      "jp": "幸せです。",
+      "us": "I am happy.",
+      "cn": "很幸福。"
+    }
+  },
+  {
+    "id": 266,
+    "text": "사랑해요.",
+    "trans": {
+      "jp": "愛しています。",
+      "us": "I love you.",
+      "cn": "我爱你。"
+    }
+  },
+  {
+    "id": 267,
+    "text": "음식 반입 가능한가요?",
+    "trans": {
+      "jp": "食べ物の持ち込みは可能ですか？",
+      "us": "Is outside food allowed?",
+      "cn": "可以带食物进去吗？"
+    }
+  },
+  {
+    "id": 268,
+    "text": "놀랐어요.",
+    "trans": {
+      "jp": "びっくりしました。",
+      "us": "I was surprised.",
+      "cn": "吓了一跳。"
+    }
+  },
+  {
+    "id": 269,
+    "text": "이해했어요.",
+    "trans": {
+      "jp": "理解しました。",
+      "us": "I understand.",
+      "cn": "我懂了。"
+    }
+  },
+  {
+    "id": 270,
+    "text": "알겠어요.",
+    "trans": {
+      "jp": "わかりました。",
+      "us": "I see.",
+      "cn": "知道了。"
+    }
+  },
+  {
+    "id": 271,
+    "text": "도와줄게요.",
+    "trans": {
+      "jp": "お手伝いします。",
+      "us": "Let me help you.",
+      "cn": "我来帮你。"
+    }
+  },
+  {
+    "id": 272,
+    "text": "같이 가요.",
+    "trans": {
+      "jp": "一緒に行きましょう。",
+      "us": "Let's go together.",
+      "cn": "一起去吧。"
+    }
+  },
+  {
+    "id": 273,
+    "text": "조심하세요.",
+    "trans": {
+      "jp": "気をつけてください。",
+      "us": "Please be careful.",
+      "cn": "注意安全。"
+    }
+  },
+  {
+    "id": 274,
+    "text": "행운을 빌어요.",
+    "trans": {
+      "jp": "幸運を祈ります。",
+      "us": "Good luck.",
+      "cn": "祝你好运。"
+    }
+  },
+  {
+    "id": 275,
+    "text": "저도 그렇게 생각해요.",
+    "trans": {
+      "jp": "私もそう思います。",
+      "us": "I think so too.",
+      "cn": "我也这么觉得。"
+    }
+  },
+  {
+    "id": 276,
+    "text": "맞아요.",
+    "trans": {
+      "jp": "その通りです。",
+      "us": "That is right.",
+      "cn": "没错。"
+    }
+  },
+  {
+    "id": 277,
+    "text": "아니에요.",
+    "trans": {
+      "jp": "いいえ、違います。",
+      "us": "That is not right.",
+      "cn": "不是。"
+    }
+  },
+  {
+    "id": 278,
+    "text": "정말요?",
+    "trans": {
+      "jp": "本当ですか？",
+      "us": "Really?",
+      "cn": "真的吗？"
+    }
+  },
+  {
+    "id": 279,
+    "text": "행복한 하루 되세요.",
+    "trans": {
+      "jp": "良い一日を。",
+      "us": "Have a nice day.",
+      "cn": "祝你今天过得愉快。"
+    }
+  },
+  {
+    "id": 280,
+    "text": "별로에요.",
+    "trans": {
+      "jp": "いまいちです。",
+      "us": "It is not that good.",
+      "cn": "不怎么样。"
+    }
+  },
+  {
+    "id": 281,
+    "text": "돈이 없어요.",
+    "trans": {
+      "jp": "お金がありません。",
+      "us": "I don't have any money.",
+      "cn": "我没钱。"
+    }
+  },
+  {
+    "id": 282,
+    "text": "시간이 없어요.",
+    "trans": {
+      "jp": "時間がありません。",
+      "us": "I don't have time.",
+      "cn": "我没时间。"
+    }
+  },
+  {
+    "id": 283,
+    "text": "연락 주세요.",
+    "trans": {
+      "jp": "ご連絡ください。",
+      "us": "Please contact me.",
+      "cn": "请联系我。"
+    }
+  },
+  {
+    "id": 284,
+    "text": "몇 살이세요?",
+    "trans": {
+      "jp": "おいくつですか？",
+      "us": "How old are you?",
+      "cn": "请问你多大了？"
+    }
+  },
+  {
+    "id": 285,
+    "text": "저는 [ ]살이에요.",
+    "trans": {
+      "jp": "私はn歳です。",
+      "us": "I am [ ] years old.",
+      "cn": "我[]岁。"
+    }
+  },
+  {
+    "id": 286,
+    "text": "무슨 일 하세요?",
+    "trans": {
+      "jp": "お仕事は何をされていますか？",
+      "us": "What do you do for a living?",
+      "cn": "你是做什么工作的？"
+    }
+  },
+  {
+    "id": 287,
+    "text": "취미가 뭐예요?",
+    "trans": {
+      "jp": "趣味は何ですか？",
+      "us": "What are your hobbies?",
+      "cn": "你的爱好是什么？"
+    }
+  },
+  {
+    "id": 288,
+    "text": "어디에 사세요?",
+    "trans": {
+      "jp": "どちらにお住まいですか？",
+      "us": "Where do you live?",
+      "cn": "你住在哪里？"
+    }
+  },
+  {
+    "id": 289,
+    "text": "가족이 몇 명이에요?",
+    "trans": {
+      "jp": "ご家族は何人ですか？",
+      "us": "How big is your family?",
+      "cn": "你家里有几口人？"
+    }
+  },
+  {
+    "id": 290,
+    "text": "형제가 있나요?",
+    "trans": {
+      "jp": "ご兄弟はいますか？",
+      "us": "Do you have any siblings?",
+      "cn": "你有兄弟姐妹吗？"
+    }
+  },
+  {
+    "id": 291,
+    "text": "결혼하셨나요?",
+    "trans": {
+      "jp": "結婚されていますか？",
+      "us": "Are you married?",
+      "cn": "你结婚了吗？"
+    }
+  },
+  {
+    "id": 292,
+    "text": "아이들이 있나요?",
+    "trans": {
+      "jp": "お子さんはいますか？",
+      "us": "Do you have any children?",
+      "cn": "你有孩子吗？"
+    }
+  },
+  {
+    "id": 293,
+    "text": "학교에 다니세요?",
+    "trans": {
+      "jp": "学校に通っていますか？",
+      "us": "Are you a student?",
+      "cn": "你在上学吗？"
+    }
+  },
+  {
+    "id": 294,
+    "text": "애인이 있나요?",
+    "trans": {
+      "jp": "恋人はいますか？",
+      "us": "Do you have a boyfriend or girlfriend?",
+      "cn": "你有对象吗？"
+    }
+  },
+  {
+    "id": 295,
+    "text": "어려워요.",
+    "trans": {
+      "jp": "難しいです。",
+      "us": "It is difficult.",
+      "cn": "很难。"
+    }
+  },
+  {
+    "id": 296,
+    "text": "쉬워요.",
+    "trans": {
+      "jp": "簡単です。",
+      "us": "It is easy.",
+      "cn": "很简单。"
+    }
+  },
+  {
+    "id": 297,
+    "text": "설레요.",
+    "trans": {
+      "jp": "ワクワクします。",
+      "us": "I am excited.",
+      "cn": "很激动。"
+    }
+  },
+  {
+    "id": 298,
+    "text": "부끄러워요.",
+    "trans": {
+      "jp": "恥ずかしいです。",
+      "us": "I feel shy.",
+      "cn": "很害羞。"
+    }
+  },
+  {
+    "id": 299,
+    "text": "현지인들이 많이 가는 곳은 어디예요?",
+    "trans": {
+      "jp": "地元の人がよく行く場所はどこですか？",
+      "us": "Where do locals usually go?",
+      "cn": "本地人常去的地方是哪里？"
+    }
+  },
+  {
+    "id": 300,
+    "text": "서둘러야 해요.",
+    "trans": {
+      "jp": "急がないといけません。",
+      "us": "I need to hurry.",
+      "cn": "得快点了。"
+    }
+  }
 ]

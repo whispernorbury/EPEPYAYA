@@ -12,8 +12,11 @@ services:
     environment:
       - NODE_ENV=${NODE_ENV:-development}
       - REDIS_URL=${REDIS_URL:-redis://redis:6379}
+      - EMBEDDING_SERVICE_URL=${EMBEDDING_SERVICE_URL:-http://embedding:5000}
     depends_on:
       redis:
+        condition: service_healthy
+      embedding:
         condition: service_healthy
     volumes:
       - ./vectors.json:/app/vectors.json:ro
@@ -24,6 +27,24 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+
+  embedding:
+    build:
+      context: .
+      dockerfile: Dockerfile.embedding
+    container_name: semantic-embedding-service
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-jhgan/ko-sroberta-multitask}
+      - EMBEDDING_PORT=5000
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://localhost:5000/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
 
   redis:
     image: redis:7-alpine
