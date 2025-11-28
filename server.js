@@ -7,6 +7,7 @@ import Fastify from "fastify";
 import { WebSocketServer } from "ws";
 import Redis from "ioredis";
 import { OpenAI } from "openai";
+import { pipeline } from "@xenova/transformers";
 
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 const VECTORS_FILE = "./vectors.json";
@@ -16,9 +17,11 @@ const MIN_SCORE_THRESHOLD = parseFloat(process.env.MIN_SCORE_THRESHOLD || "0.75"
 const QUANTIZE_DECIMALS = parseInt(process.env.QUANTIZE_DECIMALS || "2");
 const QUANTIZE_DIM_PREFIX = parseInt(process.env.QUANTIZE_DIM_PREFIX || "8");
 
-const EMBEDDING_MODEL = process.env.EMBEDDING_MODEL || "jhgan/ko-sroberta-multitask";
+const EMBEDDING_MODEL = process.env.EMBEDDING_MODEL || "Xenova/bge-m3";
 const CHAT_MODEL = process.env.CHAT_MODEL || "gpt-4o-mini"; // change to your finetuned model if any
-const EMBEDDING_SERVICE_URL = process.env.EMBEDDING_SERVICE_URL || "http://embedding:5000";
+
+// 전역 모델 인스턴스 (한 번만 로드)
+let embeddingPipeline = null;
 
 // utils
 function dot(a, b) {
@@ -46,33 +49,51 @@ async function loadVectors() {
   return JSON.parse(raw);
 }
 
-async function createEmbedding(text) {
-  // Use Python embedding HTTP service
-  try {
-    const response = await fetch(`${EMBEDDING_SERVICE_URL}/embed`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ text }),
-    });
-
-    if (!response.ok) {
-      const error = await response.json().catch(() => ({ error: response.statusText }));
-      throw new Error(`Embedding service error: ${error.error || response.statusText}`);
+async function getEmbeddingPipeline() {
+  if (embeddingPipeline === null) {
+    console.log(`Loading embedding model: ${EMBEDDING_MODEL}`);
+    try {
+      // BGE-m3는 양자화된 ONNX 모델이 없으므로 quantized: false 옵션 사용
+      embeddingPipeline = await pipeline('feature-extraction', EMBEDDING_MODEL, {
+        quantized: false
+      });
+      console.log(`Model ${EMBEDDING_MODEL} loaded successfully!`);
+    } catch (error) {
+      console.error(`Failed to load model ${EMBEDDING_MODEL}:`, error);
+      throw error;
     }
+  }
+  return embeddingPipeline;
+}
 
-    const result = await response.json();
-    if (result.error) {
-      throw new Error(`Embedding error: ${result.error}`);
+async function createEmbedding(text) {
+  try {
+    const pipe = await getEmbeddingPipeline();
+    
+    // BGE-m3 모델로 임베딩 생성
+    const output = await pipe(text, {
+      pooling: 'mean',
+      normalize: true
+    });
+    
+    // output은 텐서 객체이므로 배열로 변환
+    // output.data가 Float32Array인 경우와 output이 직접 배열인 경우 모두 처리
+    let embedding;
+    if (output.data) {
+      embedding = Array.from(output.data);
+    } else if (Array.isArray(output)) {
+      embedding = output;
+    } else if (output.tolist) {
+      embedding = output.tolist();
+    } else {
+      // 텐서를 직접 배열로 변환 시도
+      embedding = Array.from(output);
     }
     
-    return result.vector;
+    return embedding;
   } catch (error) {
-    if (error.message.includes("fetch")) {
-      throw new Error(`Failed to connect to embedding service at ${EMBEDDING_SERVICE_URL}`);
-    }
-    throw error;
+    console.error("Embedding error:", error);
+    throw new Error(`Failed to create embedding: ${error.message}`);
   }
 }
 
@@ -88,6 +109,8 @@ async function callLLMFallback(prompt) {
 }
 
 (async () => {
+  console.log("Loading embedding model...");
+  await getEmbeddingPipeline(); // 모델 미리 로드
   console.log("Loading vectors...");
   const vectors = await loadVectors();
   console.log(`Loaded ${vectors.length} vectors into memory.`);
