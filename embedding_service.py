@@ -7,6 +7,7 @@ from typing import List, Optional
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import uvicorn
+import numpy as np
 from FlagEmbedding import FlagModel
 
 app = FastAPI(title="BGE-M3 Embedding Service")
@@ -106,11 +107,18 @@ async def create_embedding(request: EmbeddingRequest):
     
     try:
         # bge-m3는 encode 메서드를 사용
-        # normalize 옵션에 따라 정규화 여부 결정
-        embedding = model.encode(
-            [request.text],
-            normalize_embeddings=request.normalize
-        )[0]
+        # normalize_embeddings 파라미터는 버전 호환성 문제로 제거하고 수동 정규화
+        embedding = model.encode([request.text])[0]
+        
+        # numpy array로 변환
+        if not isinstance(embedding, np.ndarray):
+            embedding = np.array(embedding)
+        
+        # 수동으로 L2 정규화 (normalize 옵션이 True인 경우)
+        if request.normalize:
+            norm = np.linalg.norm(embedding)
+            if norm > 0:
+                embedding = embedding / norm
         
         # numpy array를 list로 변환
         embedding_list = embedding.tolist() if hasattr(embedding, 'tolist') else list(embedding)
@@ -158,13 +166,20 @@ async def create_embeddings_batch(texts: List[str], normalize: Optional[bool] = 
             )
     
     try:
-        embeddings = model.encode(
-            texts,
-            normalize_embeddings=normalize
-        )
+        embeddings = model.encode(texts)
         
         results = []
         for embedding in embeddings:
+            # numpy array로 변환
+            if not isinstance(embedding, np.ndarray):
+                embedding = np.array(embedding)
+            
+            # 수동으로 L2 정규화 (normalize 옵션이 True인 경우)
+            if normalize:
+                norm = np.linalg.norm(embedding)
+                if norm > 0:
+                    embedding = embedding / norm
+            
             embedding_list = embedding.tolist() if hasattr(embedding, 'tolist') else list(embedding)
             results.append(EmbeddingResponse(
                 embedding=embedding_list,

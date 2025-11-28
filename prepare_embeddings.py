@@ -58,7 +58,6 @@ def create_embeddings(phrases: List[Dict[str, Any]], model: FlagModel) -> List[D
                 "id": phrase["id"],
                 "text": phrase["text"],
                 "trans": phrase.get("trans"),
-                "tags": phrase.get("tags", []),
                 "vector": embedding_list
             })
     

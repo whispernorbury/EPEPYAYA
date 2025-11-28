@@ -194,7 +194,6 @@ async function createEmbedding(text) {
           id: v.id, 
           text: v.text, 
           trans: v.trans || null,  // trans가 없으면 null로 설정
-          tags: v.tags || [], 
           score: sc 
         });
       }
