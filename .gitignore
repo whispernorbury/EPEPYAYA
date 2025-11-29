@@ -81,6 +81,7 @@ $RECYCLE.BIN/
 # IDE 및 에디터
 # ============================================
 # VSCode
+.vs
 .vscode/
 !.vscode/settings.json
 !.vscode/tasks.json

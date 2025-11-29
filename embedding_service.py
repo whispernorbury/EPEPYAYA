@@ -15,7 +15,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-MODEL = os.getenv("EMBEDDING_MODEL", "jhgan/ko-sroberta-multitask")
+MODEL = os.getenv("EMBEDDING_MODEL", "intfloat/multilingual-e5-large")
 PORT = int(os.getenv("EMBEDDING_PORT", "5000"))
 
 # 전역 모델 인스턴스 (한 번만 로드)
