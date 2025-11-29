@@ -52,6 +52,7 @@ def get_embedding_model():
 def create_embedding(text):
     try:
         model = get_embedding_model()
+        text = "passage: " + text
         # sentence-transformers는 자동으로 정규화된 벡터를 반환
         embedding = model.encode(text, normalize_embeddings=True)
         return embedding.tolist()

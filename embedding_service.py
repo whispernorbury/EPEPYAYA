@@ -52,7 +52,7 @@ def embed():
         text = data["text"]
         if not isinstance(text, str) or len(text) == 0:
             return jsonify({"error": "Invalid text"}), 400
-        
+        text = "query: " + text
         # 모델 로드 및 임베딩 생성
         model = get_embedding_model()
         embedding = model.encode(text, normalize_embeddings=True)
